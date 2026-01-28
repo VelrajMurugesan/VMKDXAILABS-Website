@@ -69,7 +69,9 @@ export const CTASection = () => {
               onClick={(e) => scrollToSection(e, 'contact')}
             >
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-                <Button size="lg" className="bg-ai-cyan hover:bg-ai-cyan-dark text-navy font-semibold px-8">
+                <Button size="lg" 
+                 onClick={() => navigate("/book-demo")}
+                 className="bg-ai-cyan hover:bg-ai-cyan-dark text-navy font-semibold px-8">
                   Contact Us
                 </Button>
               </motion.div>

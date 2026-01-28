@@ -4,7 +4,7 @@ import { ArrowRight, Sparkles, Shield, Zap, Bot, Brain, BarChart3 } from "lucide
 import { useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { FloatingElement } from "@/components/animations/ParallaxSection";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/hero-bg.webp";
 
 export const HeroSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
