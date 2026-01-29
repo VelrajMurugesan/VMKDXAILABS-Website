@@ -11,6 +11,8 @@ import UseCases from "./pages/UseCases";
 import BookDemo from "./pages/BookDemo";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import BlogList from "./pages/blog/BlogList";
+import BlogPost from "./pages/blog/BlogPost";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +31,8 @@ const App = () => (
           <Route path="/book-demo" element={<BookDemo />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/blog" element={<BlogList />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
