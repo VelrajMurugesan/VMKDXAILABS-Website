@@ -89,7 +89,7 @@ const BookDemo = () => {
         subtitle="Discover how VMKD X AI LABS can transform your business operations with intelligent automation and AI-powered solutions tailored to your needs."
       />
 
-      <section className="section-padding bg-background">
+      <section className="py-8 md:py-12 bg-background">
         <div className="container mx-auto container-padding">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Benefits */}
