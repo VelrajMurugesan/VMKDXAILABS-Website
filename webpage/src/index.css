@@ -10,8 +10,8 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
 
-/* Hantas AI Business Solution - Enterprise AI Theme */
-/* Dark Navy Base with Cyan/Purple Accents - Futuristic SaaS Design */
+/* VMKD X AI LABS Business Solution - Enterprise AI Theme */
+/* Dark Navy Base with Emerald Green/Teal Accents - Futuristic SaaS Design */
 
 @layer base {
   :root {
@@ -24,7 +24,7 @@
     --popover: 214 31% 91%;
     --popover-foreground: 222 47% 11%;
 
-    --primary: 200 98% 39%;
+    --primary: 155 80% 40%;
     --primary-foreground: 204 100% 97%;
 
     --secondary: 215 24% 26%;
@@ -41,26 +41,26 @@
 
     --border: 212 26% 83%;
     --input: 212 26% 83%;
-    --ring: 200 98% 39%;
+    --ring: 155 80% 40%;
 
     --radius: 0.5rem;
 
-    /* Custom Hantas AI tokens - Dark Navy + Cyan Theme */
+    /* Custom VMKD X AI LABS tokens - Dark Navy + Green Theme */
     --navy: 220 50% 8%;
     --navy-light: 220 40% 15%;
     --navy-dark: 220 55% 5%;
-    --ai-cyan: 185 100% 50%;
-    --ai-cyan-light: 185 100% 60%;
-    --ai-cyan-dark: 185 100% 40%;
-    --ai-purple: 270 70% 60%;
-    --ai-purple-light: 270 70% 70%;
+    --ai-cyan: 155 80% 45%;
+    --ai-cyan-light: 155 80% 55%;
+    --ai-cyan-dark: 155 80% 35%;
+    --ai-purple: 170 60% 50%;
+    --ai-purple-light: 170 60% 60%;
     --surface: 210 20% 98%;
     --surface-elevated: 0 0% 100%;
 
     /* Gradients */
     --gradient-hero: linear-gradient(135deg, hsl(220 50% 8%) 0%, hsl(220 40% 12%) 50%, hsl(220 45% 18%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(185 100% 50%) 0%, hsl(185 100% 40%) 100%);
-    --gradient-glow: linear-gradient(135deg, hsl(185 100% 50% / 0.2) 0%, hsl(270 70% 60% / 0.2) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(155 80% 45%) 0%, hsl(155 80% 35%) 100%);
+    --gradient-glow: linear-gradient(135deg, hsl(155 80% 45% / 0.2) 0%, hsl(170 60% 50% / 0.2) 100%);
     --gradient-surface: linear-gradient(180deg, hsl(210 20% 98%) 0%, hsl(0 0% 100%) 100%);
     --gradient-dark: linear-gradient(180deg, hsl(220 50% 8%) 0%, hsl(220 45% 12%) 100%);
 
@@ -70,22 +70,22 @@
     --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
     --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 8px 10px -1px hsl(0 0% 0% / 0.1);
     --shadow-card: 0 1px 3px 0 hsl(220 50% 8% / 0.1), 0 1px 2px -1px hsl(220 50% 8% / 0.1);
-    --shadow-card-hover: 0 10px 40px -10px hsl(185 100% 50% / 0.3);
-    --shadow-glow: 0 0 30px hsl(185 100% 50% / 0.3);
+    --shadow-card-hover: 0 10px 40px -10px hsl(155 80% 45% / 0.3);
+    --shadow-glow: 0 0 30px hsl(155 80% 45% / 0.3);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 222 47% 11%;
-    --sidebar-primary: 200 98% 39%;
+    --sidebar-primary: 155 80% 40%;
     --sidebar-primary-foreground: 204 100% 97%;
     --sidebar-accent: 215 24% 26%;
     --sidebar-accent-foreground: 210 40% 98%;
     --sidebar-border: 212 26% 83%;
-    --sidebar-ring: 200 98% 39%;
-    --chart-1: 198 93% 59%;
-    --chart-2: 213 93% 67%;
-    --chart-3: 215 20% 65%;
-    --chart-4: 215 16% 46%;
-    --chart-5: 215 19% 34%;
+    --sidebar-ring: 155 80% 40%;
+    --chart-1: 155 80% 50%;
+    --chart-2: 160 70% 55%;
+    --chart-3: 170 60% 45%;
+    --chart-4: 165 50% 35%;
+    --chart-5: 160 40% 28%;
     --sidebar: 210 40% 98%;
     --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
     --font-serif: 'Lora', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
@@ -108,8 +108,8 @@
     --popover: 215 24% 26%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 198 93% 59%;
-    --primary-foreground: 204 80% 15%;
+    --primary: 155 80% 55%;
+    --primary-foreground: 155 80% 10%;
 
     --secondary: 212 26% 83%;
     --secondary-foreground: 228 84% 4%;
@@ -125,21 +125,21 @@
 
     --border: 215 19% 34%;
     --input: 215 19% 34%;
-    --ring: 198 93% 59%;
+    --ring: 155 80% 55%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 198 93% 59%;
+    --sidebar-primary: 155 80% 55%;
     --sidebar-primary-foreground: 204 80% 15%;
     --sidebar-accent: 215 20% 65%;
     --sidebar-accent-foreground: 228 84% 4%;
     --sidebar-border: 215 19% 34%;
-    --sidebar-ring: 198 93% 59%;
-    --chart-1: 199 95% 73%;
-    --chart-2: 211 96% 78%;
-    --chart-3: 215 20% 65%;
-    --chart-4: 215 16% 46%;
-    --chart-5: 215 19% 34%;
+    --sidebar-ring: 155 80% 55%;
+    --chart-1: 155 80% 65%;
+    --chart-2: 160 70% 70%;
+    --chart-3: 170 60% 55%;
+    --chart-4: 165 50% 42%;
+    --chart-5: 160 40% 32%;
     --sidebar: 217 32% 17%;
     --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
     --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
@@ -191,7 +191,7 @@
 
   .text-gradient-glow {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(185 100% 50%) 0%, hsl(270 70% 60%) 100%);
+    background-image: linear-gradient(135deg, hsl(155 80% 45%) 0%, hsl(170 60% 50%) 100%);
   }
 
   .hero-gradient {
@@ -214,6 +214,59 @@
     box-shadow: var(--shadow-glow);
   }
 
+  /* Green tint for images */
+  .img-green-tint {
+    filter: sepia(30%) saturate(1.4) hue-rotate(90deg) brightness(0.95);
+  }
+
+  /* Vibrant glowing button */
+  .btn-glow {
+    background: linear-gradient(135deg, hsl(155 80% 45%) 0%, hsl(160 75% 38%) 50%, hsl(170 60% 42%) 100%);
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    border: 1px solid hsl(155 80% 55% / 0.4);
+    box-shadow:
+      0 0 15px hsl(155 80% 45% / 0.4),
+      0 0 30px hsl(155 80% 45% / 0.2),
+      inset 0 1px 0 hsl(155 80% 65% / 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-glow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsl(155 80% 70% / 0.3), transparent);
+    transition: left 0.5s ease;
+  }
+
+  .btn-glow:hover::before {
+    left: 100%;
+  }
+
+  .btn-glow:hover {
+    background: linear-gradient(135deg, hsl(155 80% 50%) 0%, hsl(160 75% 43%) 50%, hsl(170 60% 47%) 100%);
+    border-color: hsl(155 80% 60% / 0.6);
+    transform: translateY(-1px);
+    box-shadow:
+      0 0 20px hsl(155 80% 45% / 0.6),
+      0 0 40px hsl(155 80% 45% / 0.3),
+      0 0 60px hsl(155 80% 45% / 0.15),
+      inset 0 1px 0 hsl(155 80% 65% / 0.4);
+  }
+
+  .btn-glow:active {
+    transform: translateY(0);
+  }
+
   /* Glass morphism effect */
   .glass {
     @apply bg-white/80 backdrop-blur-xl border border-white/20;
@@ -228,7 +281,7 @@
   .gradient-border {
     position: relative;
     background: linear-gradient(hsl(var(--card)), hsl(var(--card))) padding-box,
-                linear-gradient(135deg, hsl(185 100% 50%), hsl(270 70% 60%)) border-box;
+                linear-gradient(135deg, hsl(155 80% 45%), hsl(170 60% 50%)) border-box;
     border: 1px solid transparent;
   }
 
@@ -271,10 +324,10 @@
 
   @keyframes pulse-glow {
     0%, 100% {
-      box-shadow: 0 0 20px hsl(185 100% 50% / 0.3);
+      box-shadow: 0 0 20px hsl(155 80% 45% / 0.3);
     }
     50% {
-      box-shadow: 0 0 40px hsl(185 100% 50% / 0.5);
+      box-shadow: 0 0 40px hsl(155 80% 45% / 0.5);
     }
   }
 }

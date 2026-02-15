@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { motion } from "framer-motion";
@@ -13,19 +14,19 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email Us",
-    details: "contact@hantasai.com",
+    details: "info@vmkdxailabs.com",
     subtitle: "For general inquiries",
   },
   {
     icon: Phone,
     title: "Call Us",
-    details: "+91 96888 84069",
+    details: "+91-7824030723",
     subtitle: "Mon-Sat, 9AM-7PM IST",
   },
   {
     icon: MapPin,
     title: "Visit Us",
-    details: "Trichy, Tamil Nadu, India",
+    details: "Dindigul, Tamil Nadu, India",
     subtitle: "Headquarters",
   },
   {
@@ -42,9 +43,9 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     await new Promise((resolve) => setTimeout(resolve, 1000));
-    
+
     toast.success("Thank you for your message! We'll get back to you within 24 hours.");
     setIsSubmitting(false);
     (e.target as HTMLFormElement).reset();
@@ -52,6 +53,11 @@ const Contact = () => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>Contact VMKD X AI LABS | Get AI Automation & Development Support</title>
+        <meta name="description" content="Contact VMKD X AI LABS for AI automation, AI agents, business solutions, startup projects, freelancing, and custom AI development. Reach us at info@vmkdxailabs.com." />
+        <link rel="canonical" href="https://vmkdxailabs.com/contact" />
+      </Helmet>
       <PageHeader
         badge="Contact Us"
         title="Get in Touch"
@@ -121,26 +127,26 @@ const Contact = () => {
                 <h3 className="font-semibold text-foreground font-display">Direct Contact:</h3>
                 <div className="space-y-3">
                   <a
-                    href="mailto:contact@hantasai.com"
+                    href="mailto:info@vmkdxailabs.com"
                     className="flex items-center gap-3 text-muted-foreground hover:text-ai-cyan transition-colors"
                   >
                     <Mail size={18} className="text-ai-cyan" />
-                    <span>contact@hantasai.com</span>
+                    <span>info@vmkdxailabs.com</span>
                   </a>
                   <a
-                    href="tel:+919688884069"
+                    href="tel:+917824030723"
                     className="flex items-center gap-3 text-muted-foreground hover:text-ai-cyan transition-colors"
                   >
                     <Phone size={18} className="text-ai-cyan" />
-                    <span>+91 96888 84069</span>
+                    <span>+91-7824030723</span>
                   </a>
                   <div className="flex items-start gap-3 text-muted-foreground">
                     <MapPin size={18} className="text-ai-cyan flex-shrink-0 mt-0.5" />
-                    <span>Trichy, Tamil Nadu, India</span>
+                    <span>Dindigul, Tamil Nadu, India</span>
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </motion.div> 
 
             <motion.div
               initial={{ opacity: 0, x: 20 }}
@@ -152,20 +158,20 @@ const Contact = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="name">Full Name *</Label>
-                    <Input 
-                      id="name" 
-                      placeholder="John Doe" 
-                      required 
+                    <Input
+                      id="name"
+                      placeholder="John Doe"
+                      required
                       className="bg-background"
                     />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="email">Email Address *</Label>
-                    <Input 
-                      id="email" 
-                      type="email" 
-                      placeholder="john@company.com" 
-                      required 
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="john@company.com"
+                      required
                       className="bg-background"
                     />
                   </div>
@@ -174,18 +180,18 @@ const Contact = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="company">Company Name</Label>
-                    <Input 
-                      id="company" 
-                      placeholder="Acme Inc." 
+                    <Input
+                      id="company"
+                      placeholder="Acme Inc."
                       className="bg-background"
                     />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="phone">Phone Number</Label>
-                    <Input 
-                      id="phone" 
+                    <Input
+                      id="phone"
                       type="tel"
-                      placeholder="+91 98765 43210" 
+                      placeholder="+91 98765 43210"
                       className="bg-background"
                     />
                   </div>
@@ -193,18 +199,18 @@ const Contact = () => {
 
                 <div className="space-y-2">
                   <Label htmlFor="subject">Subject *</Label>
-                  <Input 
-                    id="subject" 
-                    placeholder="How can we help you?" 
-                    required 
+                  <Input
+                    id="subject"
+                    placeholder="How can we help you?"
+                    required
                     className="bg-background"
                   />
                 </div>
 
                 <div className="space-y-2">
                   <Label htmlFor="requirement">Your Requirement *</Label>
-                  <Textarea 
-                    id="requirement" 
+                  <Textarea
+                    id="requirement"
                     placeholder="Tell us about your project or inquiry..."
                     rows={5}
                     required
@@ -212,10 +218,10 @@ const Contact = () => {
                   />
                 </div>
 
-                <Button 
-                  type="submit" 
-                  size="lg" 
-                  className="w-full bg-ai-cyan hover:bg-ai-cyan-dark text-navy font-semibold"
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="w-full bg-ai-cyan hover:bg-ai-cyan-dark text-navy font-semibold btn-glow"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}

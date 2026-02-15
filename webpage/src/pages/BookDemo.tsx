@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { motion } from "framer-motion";
@@ -52,10 +53,15 @@ const BookDemo = () => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>Book a Free AI Demo | AI Automation Consultation — VMKD X AI LABS</title>
+        <meta name="description" content="Book a free AI consultation with VMKD X AI LABS. Get a personalized demo of our AI automation, AI agents, chatbots, and business solutions tailored to your needs." />
+        <link rel="canonical" href="https://vmkdxailabs.com/book-demo" />
+      </Helmet>
       <PageHeader
         badge="Book a Demo"
         title="Schedule Your Free AI Consultation"
-        subtitle="Discover how Hantas AI can transform your business operations with intelligent automation and AI-powered solutions tailored to your needs."
+        subtitle="Discover how VMKD X AI LABS can transform your business operations with intelligent automation and AI-powered solutions tailored to your needs."
       />
 
       <section className="section-padding bg-background">
@@ -110,18 +116,18 @@ const BookDemo = () => {
                 <h3 className="font-semibold text-foreground font-display">Prefer to Talk First?</h3>
                 <div className="space-y-3">
                   <a
-                    href="tel:+919688884069"
+                    href="tel:+917824030723"
                     className="flex items-center gap-3 text-muted-foreground hover:text-ai-cyan transition-colors"
                   >
                     <Phone size={18} className="text-ai-cyan" />
-                    <span>+91 96888 84069</span>
+                    <span>+91-7824030723</span>
                   </a>
                   <a
-                    href="mailto:contact@hantasai.com"
+                    href="mailto:info@vmkdxailabs.com"
                     className="flex items-center gap-3 text-muted-foreground hover:text-ai-cyan transition-colors"
                   >
                     <Mail size={18} className="text-ai-cyan" />
-                    <span>contact@hantasai.com</span>
+                    <span>info@vmkdxailabs.com</span>
                   </a>
                 </div>
               </div>
@@ -219,7 +225,7 @@ const BookDemo = () => {
                 <Button 
                   type="submit" 
                   size="lg" 
-                  className="w-full bg-ai-cyan hover:bg-ai-cyan-dark text-navy font-semibold"
+                  className="w-full bg-ai-cyan hover:bg-ai-cyan-dark text-navy font-semibold btn-glow"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? "Submitting..." : "Book My Free Demo"}

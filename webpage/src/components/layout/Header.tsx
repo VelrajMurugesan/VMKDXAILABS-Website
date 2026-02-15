@@ -3,7 +3,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
-import hantasLogo from "@/assets/hantas-logo.png";
+import logoLight from "@/assets/logo.png";
+import logoDark from "@/assets/logo-dark.png";
 
 const navItems = [
   { name: "Home", path: "/", anchor: "home" },
@@ -69,15 +70,22 @@ export const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
             <motion.img
-              src={hantasLogo}
-              alt="Hantas AI"
-              className="h-10 w-auto"
+              src={logoLight}
+              alt="VMKD X AI LABS"
+              className="h-10 w-auto dark:hidden"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
+            />
+            <motion.img
+              src={logoDark}
+              alt="VMKD X AI LABS"
+              className="h-10 w-auto hidden dark:block"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
             />
             <div className="hidden sm:block">
               <span className="text-lg font-bold text-white font-display">
-                Hantas <span className="text-ai-cyan">AI</span>
+                VMKD X <span className="text-ai-cyan">AI LABS</span>
               </span>
               <span className="block text-[10px] text-white/60 -mt-1 tracking-wider">
                 BUSINESS SOLUTION
@@ -106,14 +114,14 @@ export const Header = () => {
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-3">
             <a
-              href="tel:+919688884069"
+              href="tel:+917824030723"
               className="flex items-center gap-2 text-sm text-white/80 hover:text-ai-cyan transition-colors"
             >
               <Phone size={16} />
-              <span className="hidden xl:inline">+91 96888 84069</span>
+              <span className="hidden xl:inline">+91-7824030723</span>
             </a>
             <Link to="/book-demo">
-              <Button className="bg-ai-cyan hover:bg-ai-cyan-dark text-navy font-semibold px-6">
+              <Button className="bg-ai-cyan hover:bg-ai-cyan-dark text-navy font-semibold btn-glow px-6">
                 Book Demo
               </Button>
             </Link>
@@ -155,14 +163,14 @@ export const Header = () => {
               ))}
               <div className="pt-4 mt-2 border-t border-white/10 space-y-3">
                 <a
-                  href="tel:+919688884069"
+                  href="tel:+917824030723"
                   className="flex items-center gap-2 text-sm text-white/80 px-4"
                 >
                   <Phone size={16} className="text-ai-cyan" />
-                  +91 96888 84069
+                  +91-7824030723
                 </a>
                 <Link to="/book-demo" onClick={() => setIsOpen(false)}>
-                  <Button className="w-full bg-ai-cyan hover:bg-ai-cyan-dark text-navy font-semibold">
+                  <Button className="w-full bg-ai-cyan hover:bg-ai-cyan-dark text-navy font-semibold btn-glow">
                     Book a Demo
                   </Button>
                 </Link>

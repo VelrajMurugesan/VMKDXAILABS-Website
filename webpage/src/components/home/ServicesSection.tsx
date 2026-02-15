@@ -69,7 +69,7 @@ const services = [
   },
   {
     icon: Rocket,
-    title: "SaaS Product Development",
+    title: "Micro SaaS & SaaS Product Development",
     description: "Build scalable SaaS products with AI-powered features, from concept to market launch.",
   },
   {

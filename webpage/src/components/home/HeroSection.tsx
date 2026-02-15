@@ -4,7 +4,7 @@ import { ArrowRight, Sparkles, Shield, Zap, Bot, Brain, BarChart3 } from "lucide
 import { useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { FloatingElement } from "@/components/animations/ParallaxSection";
-import heroBg from "@/assets/hero-bg.webp";
+import heroVideo from "@/assets/hero-video.mp4";
 
 export const HeroSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -34,18 +34,22 @@ export const HeroSection = () => {
 
   return (
     <section id="home" ref={sectionRef} className="relative overflow-hidden min-h-screen flex items-center">
-      {/* Background Image with Overlay */}
-      <motion.div 
-        className="absolute inset-0 z-0" 
+      {/* Background Video with Red+Green Overlay */}
+      <motion.div
+        className="absolute inset-0 z-0"
         style={{ y: backgroundY }}
       >
-        <img 
-          src={heroBg} 
-          alt="" 
+        <video
+          src={heroVideo}
+          autoPlay
+          loop
+          muted
+          playsInline
           className="w-full h-full object-cover"
-          loading="eager"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-navy/90 via-navy/80 to-navy" />
+        {/* Red + Green gradient tint */}
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-600/40 via-transparent to-red-600/40 mix-blend-color" />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy/85 via-navy/70 to-navy" />
       </motion.div>
       
       {/* Animated Grid Pattern */}
@@ -87,14 +91,14 @@ export const HeroSection = () => {
           />
           <defs>
             <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="hsl(185 100% 50%)" stopOpacity="0" />
-              <stop offset="50%" stopColor="hsl(185 100% 50%)" stopOpacity="1" />
-              <stop offset="100%" stopColor="hsl(185 100% 50%)" stopOpacity="0" />
+              <stop offset="0%" stopColor="hsl(155 80% 45%)" stopOpacity="0" />
+              <stop offset="50%" stopColor="hsl(155 80% 45%)" stopOpacity="1" />
+              <stop offset="100%" stopColor="hsl(155 80% 45%)" stopOpacity="0" />
             </linearGradient>
             <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="hsl(270 70% 60%)" stopOpacity="0" />
-              <stop offset="50%" stopColor="hsl(270 70% 60%)" stopOpacity="1" />
-              <stop offset="100%" stopColor="hsl(270 70% 60%)" stopOpacity="0" />
+              <stop offset="0%" stopColor="hsl(170 60% 50%)" stopOpacity="0" />
+              <stop offset="50%" stopColor="hsl(170 60% 50%)" stopOpacity="1" />
+              <stop offset="100%" stopColor="hsl(170 60% 50%)" stopOpacity="0" />
             </linearGradient>
           </defs>
         </svg>
@@ -154,7 +158,7 @@ export const HeroSection = () => {
               onClick={(e) => scrollToSection(e, 'contact')}
             >
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-                <Button size="lg" className="bg-ai-cyan hover:bg-ai-cyan-dark text-navy font-semibold px-8 py-6 text-base group">
+                <Button size="lg" className="bg-ai-cyan hover:bg-ai-cyan-dark text-navy font-semibold btn-glow px-8 py-6 text-base group">
                   Book Free AI Consultation
                   <motion.span
                     className="ml-2 inline-block"
@@ -171,7 +175,7 @@ export const HeroSection = () => {
               onClick={(e) => scrollToSection(e, 'services')}
             >
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-                <Button size="lg" className="bg-ai-cyan hover:bg-ai-cyan-dark text-navy font-semibold px-8 py-6 text-base">
+                <Button size="lg" className="bg-ai-cyan hover:bg-ai-cyan-dark text-navy font-semibold btn-glow px-8 py-6 text-base">
                   Explore Solutions
                 </Button>
               </motion.div>

@@ -1,8 +1,9 @@
+import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { CTASection } from "@/components/home/CTASection";
 import { motion } from "framer-motion";
-import { 
+import {
   Bot, 
   BarChart3, 
   Code, 
@@ -168,6 +169,11 @@ const solutions = [
 const Solutions = () => {
   return (
     <Layout>
+      <Helmet>
+        <title>AI Solutions | AI Automation, Chatbots, LLM, Data Analytics — VMKD X AI LABS</title>
+        <meta name="description" content="Explore VMKD X AI LABS AI solutions: business automation, AI chatbots, LLM & RAG, data analytics, ePublishing, eBooks automation, custom development with Java, Python, AutoGen & N8N." />
+        <link rel="canonical" href="https://vmkdxailabs.com/solutions" />
+      </Helmet>
       <PageHeader
         badge="Solutions"
         title="Enterprise AI Solutions"

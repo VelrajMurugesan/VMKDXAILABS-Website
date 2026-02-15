@@ -35,4 +35,4 @@ AI automation is no longer optional. It is a growth enabler for modern businesse
 
 ## Call to Action
 🚀 **Want to automate your business processes?**  
-Book a **Free AI Consultation** with **Hantas AI**.
+Book a **Free AI Consultation** with **VMKD X AI LABS**.

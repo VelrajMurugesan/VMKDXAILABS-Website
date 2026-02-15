@@ -1,8 +1,9 @@
+import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { CTASection } from "@/components/home/CTASection";
 import { motion } from "framer-motion";
-import { Building2, Factory, Heart, ShoppingCart, GraduationCap, Briefcase, Truck, Banknote, CheckCircle } from "lucide-react";
+import { Building2, Factory, Heart, ShoppingCart, GraduationCap, Briefcase, Truck, Banknote, Shield, BookOpen, BookMarked, CheckCircle } from "lucide-react";
 
 const useCases = [
   {
@@ -102,6 +103,30 @@ const useCases = [
     ],
   },
   {
+    icon: Shield,
+    industry: "Insurance",
+    title: "AI-Powered Insurance Solutions",
+    description: "Modernize insurance operations with AI-driven underwriting, claims processing, and risk assessment for faster, smarter decisions.",
+    cases: [
+      {
+        name: "Claims Processing Automation",
+        description: "AI automating claims triage and settlement, reducing processing time by 60%",
+      },
+      {
+        name: "Underwriting Intelligence",
+        description: "Predictive models for risk assessment and premium optimization with 95% accuracy",
+      },
+      {
+        name: "Fraud Detection & Prevention",
+        description: "Real-time AI identifying fraudulent claims, saving millions annually",
+      },
+      {
+        name: "Customer Self-Service Portal",
+        description: "AI chatbot handling policy inquiries, renewals, and claims filing 24/7",
+      },
+    ],
+  },
+  {
     icon: Briefcase,
     industry: "Professional Services",
     title: "AI for Service Excellence",
@@ -197,15 +222,68 @@ const useCases = [
       },
     ],
   },
+  {
+    icon: BookOpen,
+    industry: "ePublishing",
+    title: "AI-Powered Digital Publishing",
+    description: "Revolutionize digital publishing workflows with AI-driven content creation, formatting, distribution, and analytics for publishers and authors.",
+    cases: [
+      {
+        name: "Automated Content Formatting",
+        description: "AI converting manuscripts into multiple digital formats (ePub, PDF, MOBI) instantly",
+      },
+      {
+        name: "Metadata & SEO Optimization",
+        description: "AI-generated metadata, keywords, and descriptions boosting discoverability by 60%",
+      },
+      {
+        name: "Content Localization",
+        description: "AI translation and localization for publishing in 50+ languages",
+      },
+      {
+        name: "Sales & Royalty Analytics",
+        description: "Real-time dashboards tracking sales, royalties, and reader engagement across platforms",
+      },
+    ],
+  },
+  {
+    icon: BookMarked,
+    industry: "eBooks Automation",
+    title: "Intelligent eBook Production",
+    description: "Automate the entire eBook lifecycle from creation to distribution with AI-powered tools for authors, publishers, and content creators.",
+    cases: [
+      {
+        name: "AI eBook Generation",
+        description: "Automated eBook creation from raw content with professional layouts and formatting",
+      },
+      {
+        name: "Cover Design AI",
+        description: "AI-generated book covers and interior illustrations tailored to genre and audience",
+      },
+      {
+        name: "Multi-Platform Distribution",
+        description: "One-click publishing to Amazon Kindle, Apple Books, Google Play, and 20+ platforms",
+      },
+      {
+        name: "Reader Engagement Analytics",
+        description: "AI tracking reading patterns, drop-off points, and content performance metrics",
+      },
+    ],
+  },
 ];
 
 const UseCases = () => {
   return (
     <Layout>
+      <Helmet>
+        <title>AI Use Cases | Industry Solutions for Banking, Healthcare, Insurance — VMKD X AI LABS</title>
+        <meta name="description" content="Explore VMKD X AI LABS AI use cases across Banking, Healthcare, Insurance, ePublishing, eBooks Automation, Manufacturing, Retail, Education, Logistics & more. Real AI solutions for every industry." />
+        <link rel="canonical" href="https://vmkdxailabs.com/use-cases" />
+      </Helmet>
       <PageHeader
         badge="Use Cases"
         title="Industry Solutions & Use Cases"
-        subtitle="Explore how Hantas AI delivers transformative results across industries with practical AI implementations that solve real business challenges."
+        subtitle="Explore how VMKD X AI LABS delivers transformative results across industries with practical AI implementations that solve real business challenges."
       />
 
       <section className="section-padding bg-background">

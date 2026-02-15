@@ -58,7 +58,7 @@ export const CTASection = () => {
               onClick={(e) => scrollToSection(e, 'contact')}
             >
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-                <Button size="lg" className="bg-ai-cyan hover:bg-ai-cyan-dark text-navy font-semibold px-8 group">
+                <Button size="lg" className="bg-ai-cyan hover:bg-ai-cyan-dark text-navy font-semibold btn-glow px-8 group">
                   Book Free AI Consultation
                   <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
                 </Button>
@@ -71,7 +71,7 @@ export const CTASection = () => {
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
                 <Button size="lg" 
                  onClick={() => navigate("/book-demo")}
-                 className="bg-ai-cyan hover:bg-ai-cyan-dark text-navy font-semibold px-8">
+                 className="bg-ai-cyan hover:bg-ai-cyan-dark text-navy font-semibold btn-glow px-8">
                   Contact Us
                 </Button>
               </motion.div>
@@ -80,13 +80,13 @@ export const CTASection = () => {
 
           {/* Contact Info */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-white/60">
-            <a href="tel:+919688884069" className="flex items-center gap-2 hover:text-ai-cyan transition-colors">
+            <a href="tel:+917824030723" className="flex items-center gap-2 hover:text-ai-cyan transition-colors">
               <Phone size={18} className="text-ai-cyan" />
-              <span>+91 96888 84069</span>
+              <span>+91-7824030723</span>
             </a>
-            <a href="mailto:contact@hantasai.com" className="flex items-center gap-2 hover:text-ai-cyan transition-colors">
+            <a href="mailto:info@vmkdxailabs.com" className="flex items-center gap-2 hover:text-ai-cyan transition-colors">
               <Mail size={18} className="text-ai-cyan" />
-              <span>contact@hantasai.com</span>
+              <span>info@vmkdxailabs.com</span>
             </a>
           </div>
         </motion.div>

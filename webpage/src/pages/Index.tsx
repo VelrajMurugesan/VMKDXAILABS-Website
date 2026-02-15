@@ -1,14 +1,15 @@
+import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { HeroSection } from "@/components/home/HeroSection";
 import { ServicesSection } from "@/components/home/ServicesSection";
 import { CTASection } from "@/components/home/CTASection";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { CheckCircle, Users, TrendingUp, Globe, Building2, Factory, Heart, ShoppingCart, GraduationCap, Briefcase, BarChart3, Cpu, Cloud, Workflow, Database, Shield, Zap, Award, Target, Lightbulb, Eye } from "lucide-react";
+import { CheckCircle, Users, TrendingUp, Globe, Building2, Factory, Heart, ShoppingCart, GraduationCap, Briefcase, BarChart3, Cpu, Cloud, Workflow, Database, Shield, Zap, Award, Target, Lightbulb, Eye, BookOpen, BookMarked, Code, Braces, Bot, GitBranch } from "lucide-react";
 import { useRef } from "react";
 import { StaggerContainer, staggerItemVariants } from "@/components/animations/ParallaxSection";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import aiServicesImg from "@/assets/ai-services.jpg";
+import aiServicesImg from "@/assets/footer-bg.png";
 import aiAutomationImg from "@/assets/ai-automation.jpg";
 
 const stats = [
@@ -23,7 +24,10 @@ const industries = [
   { icon: Factory, name: "Manufacturing" },
   { icon: Heart, name: "Healthcare" },
   { icon: ShoppingCart, name: "Retail & E-commerce" },
+  { icon: Shield, name: "Insurance" },
   { icon: GraduationCap, name: "Education" },
+  { icon: BookOpen, name: "ePublishing" },
+  { icon: BookMarked, name: "eBooks Automation" },
   { icon: Briefcase, name: "Professional Services" },
 ];
 
@@ -34,6 +38,10 @@ const technologies = [
   { icon: Workflow, name: "Automation" },
   { icon: Database, name: "LLM & RAG" },
   { icon: Shield, name: "Enterprise Security" },
+  { icon: Code, name: "Java" },
+  { icon: Braces, name: "Python" },
+  { icon: Bot, name: "AutoGen" },
+  { icon: GitBranch, name: "N8N" },
 ];
 
 const benefits = [
@@ -95,6 +103,11 @@ const Index = () => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>VMKD X AI LABS | AI Automation, AI Agents, Business Solutions & Custom Development</title>
+        <meta name="description" content="VMKD X AI LABS — Global AI automation company. AI agents, business solutions, startup MVP, ePublishing, eBooks automation, AI training, freelancing, custom development using Java, Python, AutoGen & N8N." />
+        <link rel="canonical" href="https://vmkdxailabs.com/" />
+      </Helmet>
       <HeroSection />
       
       {/* Stats Section */}
@@ -140,13 +153,13 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                About Hantas AI
+                About VMKD X AI LABS
               </motion.span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 font-display">
                 Transforming Businesses with <span className="text-ai-cyan">Intelligent AI</span>
               </h2>
               <p className="text-muted-foreground mb-6 text-lg leading-relaxed">
-                Hantas AI Business Solution is a global AI consulting company dedicated to helping enterprises unlock the power of artificial intelligence. We specialize in creating custom AI solutions that solve real business challenges.
+                VMKD X AI LABS Business Solution is a global AI consulting company dedicated to helping enterprises unlock the power of artificial intelligence. We specialize in creating custom AI solutions that solve real business challenges.
               </p>
               <div className="grid sm:grid-cols-3 gap-6 mb-8">
                 <div className="text-center p-4 bg-muted/50 rounded-xl">
@@ -175,9 +188,9 @@ const Index = () => {
             >
               <div className="relative rounded-2xl overflow-hidden">
                 <img 
-                  src={aiServicesImg} 
-                  alt="AI Technology Visualization" 
-                  className="w-full h-80 object-cover"
+                  src={aiServicesImg}
+                  alt="AI Technology Visualization"
+                  className="w-full h-80 object-cover img-green-tint"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent" />
@@ -267,7 +280,7 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                Why Hantas AI
+                Why VMKD X AI LABS
               </motion.span>
               <motion.h2 
                 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 font-display"
@@ -315,7 +328,7 @@ const Index = () => {
                   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
-                <Button className="bg-ai-cyan hover:bg-ai-cyan-dark text-navy font-semibold">
+                <Button className="bg-ai-cyan hover:bg-ai-cyan-dark text-navy font-semibold btn-glow">
                   Start Your AI Journey
                 </Button>
               </a>
@@ -334,9 +347,9 @@ const Index = () => {
               >
                 <div className="relative rounded-xl overflow-hidden mb-6">
                   <img 
-                    src={aiAutomationImg} 
-                    alt="AI Automation" 
-                    className="w-full h-48 object-cover"
+                    src={aiAutomationImg}
+                    alt="AI Automation"
+                    className="w-full h-48 object-cover img-green-tint"
                     loading="lazy"
                   />
                 </div>

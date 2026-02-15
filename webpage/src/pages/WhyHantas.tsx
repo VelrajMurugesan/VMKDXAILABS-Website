@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { CTASection } from "@/components/home/CTASection";
@@ -84,10 +85,15 @@ const commitments = [
 const WhyHantas = () => {
   return (
     <Layout>
+      <Helmet>
+        <title>Why VMKD X AI LABS | Trusted AI Automation & Development Partner</title>
+        <meta name="description" content="Why choose VMKD X AI LABS? Custom AI solutions, enterprise-grade security, rapid deployment, 98% client satisfaction. Your trusted partner for AI automation and digital transformation." />
+        <link rel="canonical" href="https://vmkdxailabs.com/why-vmkd" />
+      </Helmet>
       <PageHeader
-        badge="Why Hantas AI"
+        badge="Why VMKD X AI LABS"
         title="Your Trusted Partner for AI Transformation"
-        subtitle="Discover what sets us apart and why leading enterprises across the globe choose Hantas AI for their digital transformation journey."
+        subtitle="Discover what sets us apart and why leading enterprises across the globe choose VMKD X AI LABS for their digital transformation journey."
       />
 
       {/* Main Differentiators */}

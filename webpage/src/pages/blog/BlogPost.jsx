@@ -20,11 +20,11 @@ export default function BlogPost() {
   return (
     <article>
       <Helmet>
-        <title>{data.title} | Hantas AI</title>
+        <title>{data.title} | VMKD X AI LABS</title>
         <meta name="description" content={data.description} />
         <link
           rel="canonical"
-          href={`https://www.hantasai.com/blog/${slug}`}
+          href={`https://www.vmkdxailabs.com/blog/${slug}`}
         />
       </Helmet>
 

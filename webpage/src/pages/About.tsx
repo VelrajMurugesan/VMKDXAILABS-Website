@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { CTASection } from "@/components/home/CTASection";
@@ -53,6 +54,11 @@ const expertise = [
 const About = () => {
   return (
     <Layout>
+      <Helmet>
+        <title>About VMKD X AI LABS | AI Automation Company & Enterprise AI Partner</title>
+        <meta name="description" content="Learn about VMKD X AI LABS — a global AI automation company transforming enterprises with custom AI solutions, business automation, AI agents, and digital transformation services." />
+        <link rel="canonical" href="https://vmkdxailabs.com/about" />
+      </Helmet>
       <PageHeader
         badge="About Us"
         title="Transforming Businesses Through Intelligent AI"
@@ -72,11 +78,11 @@ const About = () => {
                 Who We Are
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 font-display">
-                Hantas AI Business Solution
+                VMKD X AI LABS Business Solution
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Hantas AI Business Solution is a leading AI consulting and technology company headquartered in Trichy, Tamil Nadu, India. We specialize in helping enterprises worldwide automate processes, gain actionable insights, and scale operations through intelligent AI solutions.
+                  VMKD X AI LABS Business Solution is a leading AI consulting and technology company headquartered in Trichy, Tamil Nadu, India. We specialize in helping enterprises worldwide automate processes, gain actionable insights, and scale operations through intelligent AI solutions.
                 </p>
                 <p>
                   Founded with a vision to democratize AI for businesses of all sizes, we bring together deep technical expertise with practical business understanding to deliver solutions that create real, measurable impact.
