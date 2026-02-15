@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Sparkles, Shield, Zap, Bot, Brain, BarChart3 } from "lucide-react";
 import { useRef } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { FloatingElement } from "@/components/animations/ParallaxSection";
 import heroVideo from "@/assets/hero-video.mp4";
 
@@ -153,10 +153,7 @@ export const HeroSection = () => {
             transition={{ duration: 0.7, delay: 0.45, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
           >
-            <a
-              href="#contact"
-              onClick={(e) => scrollToSection(e, 'contact')}
-            >
+            <Link to="/book-demo">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
                 <Button size="lg" className="bg-ai-cyan hover:bg-ai-cyan-dark text-navy font-semibold btn-glow px-8 py-6 text-base group">
                   Book Free AI Consultation
@@ -169,7 +166,7 @@ export const HeroSection = () => {
                   </motion.span>
                 </Button>
               </motion.div>
-            </a>
+            </Link>
             <a
               href="#services"
               onClick={(e) => scrollToSection(e, 'services')}

@@ -8,7 +8,7 @@ interface PageHeaderProps {
 
 export const PageHeader = ({ title, subtitle, badge }: PageHeaderProps) => {
   return (
-    <section className="hero-gradient relative overflow-hidden py-24 md:py-32 lg:py-40">
+    <section className="hero-gradient relative overflow-hidden py-8 md:py-10 lg:py-12">
       {/* Background Pattern */}
       <div className="absolute inset-0 grid-pattern" />
       
