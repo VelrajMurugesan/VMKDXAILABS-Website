@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { SEOHead } from "@/components/seo/SEOHead";
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { CTASection } from "@/components/home/CTASection";
@@ -54,11 +54,20 @@ const expertise = [
 const About = () => {
   return (
     <Layout>
-      <Helmet>
-        <title>About VMKD X AI LABS | AI Automation Company & Enterprise AI Partner</title>
-        <meta name="description" content="Learn about VMKD X AI LABS — a global AI automation company transforming enterprises with custom AI solutions, business automation, AI agents, and digital transformation services." />
-        <link rel="canonical" href="https://vmkdxailabs.com/about" />
-      </Helmet>
+      <SEOHead
+        title="About VMKD X AI LABS | AI Automation Company & Enterprise AI Partner"
+        description="Learn about VMKD X AI LABS — a global AI automation company transforming enterprises with custom AI solutions, business automation, AI agents, and digital transformation services."
+        canonical="https://vmkdxailabs.com/about"
+        keywords="AI consulting company India, enterprise AI partner, AI automation company, about VMKD X AI LABS"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://vmkdxailabs.com/" },
+            { "@type": "ListItem", "position": 2, "name": "About", "item": "https://vmkdxailabs.com/about" }
+          ]
+        }}
+      />
       <PageHeader
         badge="About Us"
         title="Transforming Businesses Through Intelligent AI"

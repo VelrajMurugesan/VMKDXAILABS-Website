@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { SEOHead } from "@/components/seo/SEOHead";
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { CTASection } from "@/components/home/CTASection";
@@ -275,11 +275,20 @@ const useCases = [
 const UseCases = () => {
   return (
     <Layout>
-      <Helmet>
-        <title>AI Use Cases | Industry Solutions for Banking, Healthcare, Insurance — VMKD X AI LABS</title>
-        <meta name="description" content="Explore VMKD X AI LABS AI use cases across Banking, Healthcare, Insurance, ePublishing, eBooks Automation, Manufacturing, Retail, Education, Logistics & more. Real AI solutions for every industry." />
-        <link rel="canonical" href="https://vmkdxailabs.com/use-cases" />
-      </Helmet>
+      <SEOHead
+        title="AI Use Cases | Industry Solutions for Banking, Healthcare, Insurance — VMKD X AI LABS"
+        description="Explore VMKD X AI LABS AI use cases across Banking, Healthcare, Insurance, ePublishing, eBooks Automation, Manufacturing, Retail, Education, Logistics & more. Real AI solutions for every industry."
+        canonical="https://vmkdxailabs.com/use-cases"
+        keywords="AI for banking, AI for ePublishing, AI for healthcare, AI for insurance, AI for manufacturing, AI industry solutions"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://vmkdxailabs.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Use Cases", "item": "https://vmkdxailabs.com/use-cases" }
+          ]
+        }}
+      />
       <PageHeader
         badge="Use Cases"
         title="Industry Solutions & Use Cases"

@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { SEOHead } from "@/components/seo/SEOHead";
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { motion } from "framer-motion";
@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { CheckCircle, Calendar, Users, Lightbulb, ArrowRight, Phone, Mail } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
+import { sendEmail } from "@/lib/emailjs";
 
 const benefits = [
   {
@@ -43,21 +44,45 @@ const BookDemo = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    
-    toast.success("Thank you! We'll contact you within 24 hours to schedule your consultation.");
-    setIsSubmitting(false);
-    (e.target as HTMLFormElement).reset();
+
+    const form = e.target as HTMLFormElement;
+    const data = new FormData(form);
+
+    try {
+      await sendEmail(import.meta.env.VITE_EMAILJS_BOOK_DEMO_TEMPLATE_ID, {
+        firstName: data.get("firstName") as string,
+        lastName: data.get("lastName") as string,
+        email: data.get("email") as string,
+        company: data.get("company") as string,
+        phone: data.get("phone") as string,
+        role: data.get("role") as string,
+        message: data.get("message") as string,
+      });
+      toast.success("Thank you! We'll contact you within 24 hours to schedule your consultation.");
+      form.reset();
+    } catch {
+      toast.error("Something went wrong. Please try again or email us directly at info@vmkdxailabs.com.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <Layout>
-      <Helmet>
-        <title>Book a Free AI Demo | AI Automation Consultation — VMKD X AI LABS</title>
-        <meta name="description" content="Book a free AI consultation with VMKD X AI LABS. Get a personalized demo of our AI automation, AI agents, chatbots, and business solutions tailored to your needs." />
-        <link rel="canonical" href="https://vmkdxailabs.com/book-demo" />
-      </Helmet>
+      <SEOHead
+        title="Book a Free AI Demo | AI Automation Consultation — VMKD X AI LABS"
+        description="Book a free AI consultation with VMKD X AI LABS. Get a personalized demo of our AI automation, AI agents, chatbots, and business solutions tailored to your needs."
+        canonical="https://vmkdxailabs.com/book-demo"
+        keywords="free AI consultation, AI automation demo, book AI demo, AI business consultation"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://vmkdxailabs.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Book Demo", "item": "https://vmkdxailabs.com/book-demo" }
+          ]
+        }}
+      />
       <PageHeader
         badge="Book a Demo"
         title="Schedule Your Free AI Consultation"
@@ -152,19 +177,21 @@ const BookDemo = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="firstName">First Name *</Label>
-                    <Input 
-                      id="firstName" 
-                      placeholder="John" 
-                      required 
+                    <Input
+                      id="firstName"
+                      name="firstName"
+                      placeholder="John"
+                      required
                       className="bg-background"
                     />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="lastName">Last Name *</Label>
-                    <Input 
-                      id="lastName" 
-                      placeholder="Doe" 
-                      required 
+                    <Input
+                      id="lastName"
+                      name="lastName"
+                      placeholder="Doe"
+                      required
                       className="bg-background"
                     />
                   </div>
@@ -172,11 +199,12 @@ const BookDemo = () => {
 
                 <div className="space-y-2">
                   <Label htmlFor="email">Work Email *</Label>
-                  <Input 
-                    id="email" 
-                    type="email" 
-                    placeholder="john@company.com" 
-                    required 
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="john@company.com"
+                    required
                     className="bg-background"
                   />
                 </div>
@@ -184,19 +212,21 @@ const BookDemo = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="company">Company Name *</Label>
-                    <Input 
-                      id="company" 
-                      placeholder="Acme Inc." 
-                      required 
+                    <Input
+                      id="company"
+                      name="company"
+                      placeholder="Acme Inc."
+                      required
                       className="bg-background"
                     />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="phone">Phone Number</Label>
-                    <Input 
-                      id="phone" 
-                      type="tel" 
-                      placeholder="+91 98765 43210" 
+                    <Input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      placeholder="+91 98765 43210"
                       className="bg-background"
                     />
                   </div>
@@ -204,17 +234,19 @@ const BookDemo = () => {
 
                 <div className="space-y-2">
                   <Label htmlFor="role">Your Role</Label>
-                  <Input 
-                    id="role" 
-                    placeholder="CEO, CTO, Manager, etc." 
+                  <Input
+                    id="role"
+                    name="role"
+                    placeholder="CEO, CTO, Manager, etc."
                     className="bg-background"
                   />
                 </div>
 
                 <div className="space-y-2">
                   <Label htmlFor="message">What challenges are you looking to solve with AI? *</Label>
-                  <Textarea 
-                    id="message" 
+                  <Textarea
+                    id="message"
+                    name="message"
                     placeholder="Tell us about your business challenges, goals, and what you're hoping to achieve with AI..."
                     rows={4}
                     required

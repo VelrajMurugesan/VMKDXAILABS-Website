@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { SEOHead } from "@/components/seo/SEOHead";
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { CTASection } from "@/components/home/CTASection";
@@ -169,11 +169,71 @@ const solutions = [
 const Solutions = () => {
   return (
     <Layout>
-      <Helmet>
-        <title>AI Solutions | AI Automation, Chatbots, LLM, Data Analytics — VMKD X AI LABS</title>
-        <meta name="description" content="Explore VMKD X AI LABS AI solutions: business automation, AI chatbots, LLM & RAG, data analytics, ePublishing, eBooks automation, custom development with Java, Python, AutoGen & N8N." />
-        <link rel="canonical" href="https://vmkdxailabs.com/solutions" />
-      </Helmet>
+      <SEOHead
+        title="AI Solutions | AI Automation, Chatbots, LLM, Data Analytics — VMKD X AI LABS"
+        description="Explore VMKD X AI LABS AI solutions: business automation, AI chatbots, LLM & RAG, data analytics, ePublishing, eBooks automation, custom development with Java, Python, AutoGen & N8N."
+        canonical="https://vmkdxailabs.com/solutions"
+        keywords="AI chatbot development, LLM integration, RAG systems, AI business automation, custom AI development"
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://vmkdxailabs.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Solutions", "item": "https://vmkdxailabs.com/solutions" }
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "AI Solutions by VMKD X AI LABS",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "AI Business Automation" },
+              { "@type": "ListItem", "position": 2, "name": "AI Chatbot Development" },
+              { "@type": "ListItem", "position": 3, "name": "Business Process Automation" },
+              { "@type": "ListItem", "position": 4, "name": "Data Analytics & AI Insights" },
+              { "@type": "ListItem", "position": 5, "name": "Custom AI Development" },
+              { "@type": "ListItem", "position": 6, "name": "AI Consulting & Strategy" },
+              { "@type": "ListItem", "position": 7, "name": "LLM Integration & RAG Systems" },
+              { "@type": "ListItem", "position": 8, "name": "Voice AI & Workflow Automation" },
+              { "@type": "ListItem", "position": 9, "name": "Digital Transformation" },
+              { "@type": "ListItem", "position": 10, "name": "AI Training for Teams" },
+              { "@type": "ListItem", "position": 11, "name": "SaaS & MVP Development" },
+              { "@type": "ListItem", "position": 12, "name": "Cloud AI Deployment" }
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What AI solutions does VMKD X AI LABS offer?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "VMKD X AI LABS offers 12+ AI solutions including business automation, AI chatbot development, LLM & RAG systems, data analytics, custom AI development, voice AI, digital transformation, SaaS/MVP development, and cloud AI deployment."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How can AI automation reduce business costs?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "AI automation can reduce operational costs by up to 40% by automating repetitive tasks like document processing, invoice handling, approval workflows, and compliance audits with 99.5% accuracy."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does VMKD X AI LABS build custom AI chatbots?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, we develop intelligent AI chatbots with multi-language support, intent recognition, CRM/ERP integration, and omnichannel deployment for customer support, sales, and internal operations."
+                }
+              }
+            ]
+          }
+        ]}
+      />
       <PageHeader
         badge="Solutions"
         title="Enterprise AI Solutions"

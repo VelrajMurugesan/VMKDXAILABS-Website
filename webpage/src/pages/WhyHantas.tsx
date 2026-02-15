@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { SEOHead } from "@/components/seo/SEOHead";
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { CTASection } from "@/components/home/CTASection";
@@ -85,11 +85,20 @@ const commitments = [
 const WhyHantas = () => {
   return (
     <Layout>
-      <Helmet>
-        <title>Why VMKD X AI LABS | Trusted AI Automation & Development Partner</title>
-        <meta name="description" content="Why choose VMKD X AI LABS? Custom AI solutions, enterprise-grade security, rapid deployment, 98% client satisfaction. Your trusted partner for AI automation and digital transformation." />
-        <link rel="canonical" href="https://vmkdxailabs.com/why-vmkd" />
-      </Helmet>
+      <SEOHead
+        title="Why VMKD X AI LABS | Trusted AI Automation & Development Partner"
+        description="Why choose VMKD X AI LABS? Custom AI solutions, enterprise-grade security, rapid deployment, 98% client satisfaction. Your trusted partner for AI automation and digital transformation."
+        canonical="https://vmkdxailabs.com/why-vmkd"
+        keywords="trusted AI partner, enterprise AI security, AI development partner, why choose VMKD X AI LABS"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://vmkdxailabs.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Why VMKD X AI LABS", "item": "https://vmkdxailabs.com/why-vmkd" }
+          ]
+        }}
+      />
       <PageHeader
         badge="Why VMKD X AI LABS"
         title="Your Trusted Partner for AI Transformation"

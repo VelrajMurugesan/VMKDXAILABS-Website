@@ -30,9 +30,9 @@ const App = () => (
           <Route path="/use-cases" element={<UseCases />} />
           <Route path="/book-demo" element={<BookDemo />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<NotFound />} />
           <Route path="/blog" element={<BlogList />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

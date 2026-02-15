@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { SEOHead } from "@/components/seo/SEOHead";
 import { Layout } from "@/components/layout/Layout";
 import { HeroSection } from "@/components/home/HeroSection";
 import { ServicesSection } from "@/components/home/ServicesSection";
@@ -103,11 +103,12 @@ const Index = () => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>VMKD X AI LABS | AI Automation, AI Agents, Business Solutions & Custom Development</title>
-        <meta name="description" content="VMKD X AI LABS — Global AI automation company. AI agents, business solutions, startup MVP, ePublishing, eBooks automation, AI training, freelancing, custom development using Java, Python, AutoGen & N8N." />
-        <link rel="canonical" href="https://vmkdxailabs.com/" />
-      </Helmet>
+      <SEOHead
+        title="VMKD X AI LABS | AI Automation, AI Agents, Business Solutions & Custom Development"
+        description="VMKD X AI LABS — Global AI automation company. AI agents, business solutions, startup MVP, ePublishing, eBooks automation, AI training, freelancing, custom development using Java, Python, AutoGen & N8N."
+        canonical="https://vmkdxailabs.com/"
+        keywords="AI automation company, AI agents for business, ePublishing automation, eBooks automation, AI development India"
+      />
       <HeroSection />
       
       {/* Stats Section */}

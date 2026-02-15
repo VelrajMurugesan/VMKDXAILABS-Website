@@ -1,59 +1,35 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Mail, MapPin, Phone, ArrowRight, Linkedin, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoLight from "@/assets/logo.png";
-import logoDark from "@/assets/logo-dark.png";
 import footerBanner from "@/assets/footer-banner.png";
 
 const footerLinks = {
   company: [
-    { name: "About Us", anchor: "about" },
-    { name: "Why VMKD X AI LABS", anchor: "why-us" },
-    { name: "Industries", anchor: "industries" },
-    { name: "Contact", anchor: "contact" },
+    { name: "About Us", path: "/about" },
+    { name: "Why VMKD X AI LABS", path: "/why-vmkd" },
+    { name: "Use Cases", path: "/use-cases" },
+    { name: "Contact", path: "/contact" },
   ],
   solutions: [
-    { name: "AI Business Automation", anchor: "services" },
-    { name: "AI Chatbot Development", anchor: "services" },
-    { name: "Data Analytics & Insights", anchor: "services" },
-    { name: "Custom AI Development", anchor: "services" },
-    { name: "LLM & RAG Systems", anchor: "services" },
-    { name: "Voice AI & Workflow", anchor: "services" },
+    { name: "AI Business Automation", path: "/solutions" },
+    { name: "AI Chatbot Development", path: "/solutions" },
+    { name: "Data Analytics & Insights", path: "/solutions" },
+    { name: "Custom AI Development", path: "/solutions" },
+    { name: "LLM & RAG Systems", path: "/solutions" },
+    { name: "Voice AI & Workflow", path: "/solutions" },
   ],
-  services: [
-    { name: "AI Consulting", anchor: "services" },
-    { name: "Micro SaaS & SaaS Development", anchor: "services" },
-    { name: "MVP Building", anchor: "services" },
-    { name: "Cloud AI Deployment", anchor: "services" },
-    { name: "AI Training", anchor: "services" },
+  resources: [
+    { name: "AI Blog", path: "/blog" },
+    { name: "AI for Small Business", path: "/blog/ai-automation-for-small-business" },
+    { name: "AI for ePublishing", path: "/blog/ai-automation-for-epublishing" },
+    { name: "AI Agents Guide", path: "/blog/ai-agents-for-business-automation" },
+    { name: "Choose AI Partner", path: "/blog/how-to-choose-ai-development-partner" },
   ],
 };
 
 export const Footer = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
-
-  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, anchor: string) => {
-    e.preventDefault();
-
-    if (location.pathname !== '/') {
-      navigate('/');
-      setTimeout(() => {
-        const element = document.getElementById(anchor);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
-    } else {
-      const element = document.getElementById(anchor);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  };
-
   return (
-    <footer id="contact" className="bg-navy relative overflow-hidden">
+    <footer className="bg-navy relative overflow-hidden">
 
       {/* Background Pattern */}
       <div className="absolute inset-0 dot-pattern opacity-30" />
@@ -73,15 +49,12 @@ export const Footer = () => {
                 Schedule a free consultation with our AI experts today.
               </p>
             </div>
-            <a
-              href="#contact"
-              onClick={(e) => scrollToSection(e, 'contact')}
-            >
+            <Link to="/book-demo">
               <Button size="lg" className="bg-ai-cyan hover:bg-ai-cyan-dark text-navy font-semibold btn-glow px-8 group">
                 Book Free Consultation
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
               </Button>
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -128,13 +101,12 @@ export const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={`/#${link.anchor}`}
-                    onClick={(e) => scrollToSection(e, link.anchor)}
-                    className="text-sm text-white/60 hover:text-ai-cyan transition-colors cursor-pointer"
+                  <Link
+                    to={link.path}
+                    className="text-sm text-white/60 hover:text-ai-cyan transition-colors"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -146,31 +118,29 @@ export const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.solutions.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={`/#${link.anchor}`}
-                    onClick={(e) => scrollToSection(e, link.anchor)}
-                    className="text-sm text-white/60 hover:text-ai-cyan transition-colors cursor-pointer"
+                  <Link
+                    to={link.path}
+                    className="text-sm text-white/60 hover:text-ai-cyan transition-colors"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Services Links */}
+          {/* Resources Links */}
           <div>
-            <h4 className="font-semibold text-white mb-6 font-display">Services</h4>
+            <h4 className="font-semibold text-white mb-6 font-display">Resources</h4>
             <ul className="space-y-3">
-              {footerLinks.services.map((link) => (
+              {footerLinks.resources.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={`/#${link.anchor}`}
-                    onClick={(e) => scrollToSection(e, link.anchor)}
-                    className="text-sm text-white/60 hover:text-ai-cyan transition-colors cursor-pointer"
+                  <Link
+                    to={link.path}
+                    className="text-sm text-white/60 hover:text-ai-cyan transition-colors"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -180,7 +150,7 @@ export const Footer = () => {
         {/* Bottom Bar - 3 Columns */}
         <div className="border-t border-white/10 py-6 grid grid-cols-1 md:grid-cols-3 items-center gap-4">
           <p className="text-sm text-white/40 text-center md:text-left">
-            © {new Date().getFullYear()} VMKD X AI LABS Business Solution. All rights reserved.
+            &copy; {new Date().getFullYear()} VMKD X AI LABS Business Solution. All rights reserved.
           </p>
           <div className="flex justify-center">
             <img src={footerBanner} alt="VMKD X AI LABS" className="h-20 object-contain" />

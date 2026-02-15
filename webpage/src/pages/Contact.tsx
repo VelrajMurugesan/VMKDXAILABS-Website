@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { SEOHead } from "@/components/seo/SEOHead";
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { motion } from "framer-motion";
@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, Clock, ArrowRight, CheckCircle } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
+import { sendEmail } from "@/lib/emailjs";
 
 const contactInfo = [
   {
@@ -44,20 +45,43 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    const form = e.target as HTMLFormElement;
+    const data = new FormData(form);
 
-    toast.success("Thank you for your message! We'll get back to you within 24 hours.");
-    setIsSubmitting(false);
-    (e.target as HTMLFormElement).reset();
+    try {
+      await sendEmail(import.meta.env.VITE_EMAILJS_CONTACT_TEMPLATE_ID, {
+        name: data.get("name") as string,
+        email: data.get("email") as string,
+        company: data.get("company") as string,
+        phone: data.get("phone") as string,
+        subject: data.get("subject") as string,
+        requirement: data.get("requirement") as string,
+      });
+      toast.success("Thank you for your message! We'll get back to you within 24 hours.");
+      form.reset();
+    } catch {
+      toast.error("Something went wrong. Please try again or email us directly at info@vmkdxailabs.com.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <Layout>
-      <Helmet>
-        <title>Contact VMKD X AI LABS | Get AI Automation & Development Support</title>
-        <meta name="description" content="Contact VMKD X AI LABS for AI automation, AI agents, business solutions, startup projects, freelancing, and custom AI development. Reach us at info@vmkdxailabs.com." />
-        <link rel="canonical" href="https://vmkdxailabs.com/contact" />
-      </Helmet>
+      <SEOHead
+        title="Contact VMKD X AI LABS | Get AI Automation & Development Support"
+        description="Contact VMKD X AI LABS for AI automation, AI agents, business solutions, startup projects, freelancing, and custom AI development. Reach us at info@vmkdxailabs.com."
+        canonical="https://vmkdxailabs.com/contact"
+        keywords="AI company contact, AI automation support, contact VMKD X AI LABS"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://vmkdxailabs.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://vmkdxailabs.com/contact" }
+          ]
+        }}
+      />
       <PageHeader
         badge="Contact Us"
         title="Get in Touch"
@@ -160,6 +184,7 @@ const Contact = () => {
                     <Label htmlFor="name">Full Name *</Label>
                     <Input
                       id="name"
+                      name="name"
                       placeholder="John Doe"
                       required
                       className="bg-background"
@@ -169,6 +194,7 @@ const Contact = () => {
                     <Label htmlFor="email">Email Address *</Label>
                     <Input
                       id="email"
+                      name="email"
                       type="email"
                       placeholder="john@company.com"
                       required
@@ -182,6 +208,7 @@ const Contact = () => {
                     <Label htmlFor="company">Company Name</Label>
                     <Input
                       id="company"
+                      name="company"
                       placeholder="Acme Inc."
                       className="bg-background"
                     />
@@ -190,6 +217,7 @@ const Contact = () => {
                     <Label htmlFor="phone">Phone Number</Label>
                     <Input
                       id="phone"
+                      name="phone"
                       type="tel"
                       placeholder="+91 98765 43210"
                       className="bg-background"
@@ -201,6 +229,7 @@ const Contact = () => {
                   <Label htmlFor="subject">Subject *</Label>
                   <Input
                     id="subject"
+                    name="subject"
                     placeholder="How can we help you?"
                     required
                     className="bg-background"
@@ -211,6 +240,7 @@ const Contact = () => {
                   <Label htmlFor="requirement">Your Requirement *</Label>
                   <Textarea
                     id="requirement"
+                    name="requirement"
                     placeholder="Tell us about your project or inquiry..."
                     rows={5}
                     required
