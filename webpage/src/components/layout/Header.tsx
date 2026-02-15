@@ -43,7 +43,7 @@ export const Header = () => {
       }`}
     >
       <div className="container mx-auto container-padding">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="flex items-center justify-between h-16 xl:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
             <motion.img
@@ -71,7 +71,7 @@ export const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden xl:flex items-center gap-1">
             {navItems.map((item) => (
               <Link
                 key={item.path}
@@ -88,7 +88,7 @@ export const Header = () => {
           </nav>
 
           {/* CTA Buttons */}
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden xl:flex items-center gap-3">
             <a
               href="tel:+917824030723"
               className="flex items-center gap-2 text-sm text-white/80 hover:text-ai-cyan transition-colors"
@@ -106,7 +106,7 @@ export const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-white hover:bg-white/10 rounded-lg transition-colors"
+            className="xl:hidden p-2 text-white hover:bg-white/10 rounded-lg transition-colors"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -120,7 +120,7 @@ export const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-navy/98 backdrop-blur-xl border-b border-white/10"
+            className="xl:hidden bg-navy/98 backdrop-blur-xl border-b border-white/10"
           >
             <nav className="container mx-auto container-padding py-4 flex flex-col gap-2">
               {navItems.map((item) => (
