@@ -9,7 +9,7 @@ import { useRef } from "react";
 import { StaggerContainer, staggerItemVariants } from "@/components/animations/ParallaxSection";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import aiServicesImg from "@/assets/footer-bg.png";
+import aiServicesImg from "@/assets/ai-handshake.png";
 import aiAutomationImg from "@/assets/ai-automation.jpg";
 
 const stats = [
