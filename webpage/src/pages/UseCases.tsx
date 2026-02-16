@@ -295,7 +295,7 @@ const UseCases = () => {
         subtitle="Explore how VMKD X AI LABS delivers transformative results across industries with practical AI implementations that solve real business challenges."
       />
 
-      <section className="section-padding bg-background">
+      <section className="py-8 md:py-12 bg-background">
         <div className="container mx-auto container-padding">
           <div className="space-y-16">
             {useCases.map((useCase, index) => (

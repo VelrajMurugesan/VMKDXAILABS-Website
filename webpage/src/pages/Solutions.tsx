@@ -240,7 +240,7 @@ const Solutions = () => {
         subtitle="Comprehensive AI services designed to transform your business operations, accelerate digital transformation, and drive measurable results."
       />
 
-      <section className="section-padding bg-background">
+      <section className="py-8 md:py-12 bg-background">
         <div className="container mx-auto container-padding">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {solutions.map((solution, index) => (

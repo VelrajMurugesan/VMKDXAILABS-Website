@@ -123,7 +123,7 @@ export default function BlogList() {
         subtitle="Expert articles on AI automation, AI agents, ePublishing, and strategies for business transformation."
       />
 
-      <section className="section-padding bg-background">
+      <section className="py-8 md:py-12 bg-background">
         <div className="container mx-auto container-padding">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {blogs.map((blog, index) => (

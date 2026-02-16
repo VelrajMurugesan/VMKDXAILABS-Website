@@ -88,7 +88,7 @@ const Contact = () => {
         subtitle="Have questions about our AI solutions? We're here to help. Reach out and let's start a conversation about transforming your business."
       />
 
-      <section className="section-padding bg-background">
+      <section className="py-8 md:py-12 bg-background">
         <div className="container mx-auto container-padding">
           {/* Contact Info Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
