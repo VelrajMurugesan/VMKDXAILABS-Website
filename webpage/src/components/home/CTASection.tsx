@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, Mail } from "lucide-react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 export const CTASection = () => {
   const navigate = useNavigate();
@@ -53,29 +53,21 @@ export const CTASection = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <a
-              href="#contact"
-              onClick={(e) => scrollToSection(e, 'contact')}
-            >
+            <Link to="/book-demo">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
                 <Button size="lg" className="bg-ai-cyan hover:bg-ai-cyan-dark text-navy font-semibold btn-glow px-8 group">
                   Book Free AI Consultation
                   <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
                 </Button>
               </motion.div>
-            </a>
-            <a
-              href="#contact"
-              onClick={(e) => scrollToSection(e, 'contact')}
-            >
+            </Link>
+            <Link to="/contact">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-                <Button size="lg" 
-                 onClick={() => navigate("/book-demo")}
-                 className="bg-ai-cyan hover:bg-ai-cyan-dark text-navy font-semibold btn-glow px-8">
+                <Button size="lg" className="bg-ai-cyan hover:bg-ai-cyan-dark text-navy font-semibold btn-glow px-8">
                   Contact Us
                 </Button>
               </motion.div>
-            </a>
+            </Link>
           </div>
 
           {/* Contact Info */}

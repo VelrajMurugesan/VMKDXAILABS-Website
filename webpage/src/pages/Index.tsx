@@ -322,17 +322,11 @@ const Index = () => {
                   </motion.li>
                 ))}
               </ul>
-              <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-                }}
-              >
+              <Link to="/book-demo">
                 <Button className="bg-ai-cyan hover:bg-ai-cyan-dark text-navy font-semibold btn-glow">
                   Start Your AI Journey
                 </Button>
-              </a>
+              </Link>
             </motion.div>
 
             <motion.div
