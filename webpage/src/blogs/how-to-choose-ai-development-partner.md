@@ -148,7 +148,7 @@ Score each candidate on a 1-5 scale, multiply by weights, and total the scores f
 At [VMKD X AI LABS](/about), we've built our practice around the principles outlined in this guide:
 
 - **Technical depth** — Expert team in LLMs, RAG systems, AutoGen, N8N, Python, Java, and cloud platforms
-- **Industry experience** — [500+ projects across banking, healthcare, ePublishing, manufacturing, and more](/use-cases)
+- **Industry experience** — [Projects across banking, healthcare, ePublishing, manufacturing, and more](/use-cases)
 - **Proven methodology** — Structured discovery, agile delivery, comprehensive documentation, and knowledge transfer
 - **Enterprise security** — Compliance-first approach with enterprise-grade security in every solution
 - **Long-term partnership** — 98% client satisfaction with dedicated post-launch support and SLA-backed guarantees

@@ -175,7 +175,7 @@ Once proven, expand agent deployment across processes and departments, continuou
 - **Industry-specific** agent solutions for [banking, healthcare, ePublishing, and more](/use-cases)
 - **End-to-end delivery** from strategy to deployment and ongoing optimization
 - **Enterprise-grade security** and compliance
-- **Proven track record** with 500+ projects across 20+ countries
+- **Proven track record** with projects delivered across multiple industries
 
 ## Conclusion
 

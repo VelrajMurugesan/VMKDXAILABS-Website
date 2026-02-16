@@ -39,7 +39,7 @@ const differentiators = [
   {
     icon: Award,
     title: "Proven Track Record",
-    description: "With 500+ successful projects across 20+ countries, we have the experience and expertise to deliver results for your business.",
+    description: "With 5+ successful projects across 1+ countries, we have the experience and expertise to deliver results for your business.",
   },
   {
     icon: HeadphonesIcon,
@@ -236,8 +236,8 @@ const WhyHantas = () => {
             {[
               { icon: Target, value: "98%", label: "Project Success Rate" },
               { icon: Clock, value: "2-4", label: "Weeks to Deploy" },
-              { icon: Globe, value: "20+", label: "Countries Served" },
-              { icon: Users, value: "100+", label: "Enterprise Clients" },
+              { icon: Globe, value: "1+", label: "Countries Served" },
+              { icon: Users, value: "2+", label: "Enterprise Clients" },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}

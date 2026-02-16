@@ -13,10 +13,10 @@ import aiServicesImg from "@/assets/ai-handshake.png";
 import aiAutomationImg from "@/assets/ai-automation.jpg";
 
 const stats = [
-  { icon: Users, value: "100+", label: "Enterprise Clients" },
+  { icon: Users, value: "2+", label: "Enterprise Clients" },
   { icon: TrendingUp, value: "98%", label: "Client Satisfaction" },
-  { icon: Globe, value: "20+", label: "Countries Served" },
-  { icon: CheckCircle, value: "500+", label: "Projects Delivered" },
+  { icon: Globe, value: "1+", label: "Countries Served" },
+  { icon: CheckCircle, value: "5+", label: "Projects Delivered" },
 ];
 
 const industries = [

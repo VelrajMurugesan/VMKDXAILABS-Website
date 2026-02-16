@@ -109,9 +109,9 @@ const About = () => {
             >
               <div className="grid grid-cols-2 gap-6">
                 {[
-                  { value: "100+", label: "Enterprise Clients" },
-                  { value: "500+", label: "Projects Delivered" },
-                  { value: "20+", label: "Countries Served" },
+                  { value: "2+", label: "Enterprise Clients" },
+                  { value: "5+", label: "Projects Delivered" },
+                  { value: "1+", label: "Countries Served" },
                   { value: "98%", label: "Client Satisfaction" },
                 ].map((stat) => (
                   <motion.div
