@@ -46,9 +46,9 @@
     --radius: 0.5rem;
 
     /* Custom VMKD X AI LABS tokens - Dark Navy + Green Theme */
-    --navy: 220 50% 8%;
-    --navy-light: 220 40% 15%;
-    --navy-dark: 220 55% 5%;
+    --navy: 160 40% 7%;
+    --navy-light: 155 35% 13%;
+    --navy-dark: 160 45% 4%;
     --ai-cyan: 155 80% 45%;
     --ai-cyan-light: 155 80% 55%;
     --ai-cyan-dark: 155 80% 35%;
@@ -69,7 +69,7 @@
     --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.1);
     --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
     --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 8px 10px -1px hsl(0 0% 0% / 0.1);
-    --shadow-card: 0 1px 3px 0 hsl(220 50% 8% / 0.1), 0 1px 2px -1px hsl(220 50% 8% / 0.1);
+    --shadow-card: 0 1px 3px 0 hsl(160 40% 7% / 0.1), 0 1px 2px -1px hsl(160 40% 7% / 0.1);
     --shadow-card-hover: 0 10px 40px -10px hsl(155 80% 45% / 0.3);
     --shadow-glow: 0 0 30px hsl(155 80% 45% / 0.3);
 
@@ -273,7 +273,7 @@
   }
 
   .glass-dark {
-    background: hsl(220 45% 10% / 0.8);
+    background: hsl(160 35% 10% / 0.8);
     @apply backdrop-blur-xl border border-white/10;
   }
 
