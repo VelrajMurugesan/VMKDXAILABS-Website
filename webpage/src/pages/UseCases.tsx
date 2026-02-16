@@ -290,7 +290,7 @@ const UseCases = () => {
         }}
       />
       <PageHeader
-        badge="Use Cases"
+
         title="Industry Solutions & Use Cases"
         subtitle="Explore how VMKD X AI LABS delivers transformative results across industries with practical AI implementations that solve real business challenges."
       />

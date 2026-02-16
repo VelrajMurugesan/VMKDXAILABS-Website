@@ -100,7 +100,7 @@ const WhyHantas = () => {
         }}
       />
       <PageHeader
-        badge="Why VMKD X AI LABS"
+
         title="Your Trusted Partner for AI Transformation"
         subtitle="Discover what sets us apart and why leading enterprises across the globe choose VMKD X AI LABS for their digital transformation journey."
       />

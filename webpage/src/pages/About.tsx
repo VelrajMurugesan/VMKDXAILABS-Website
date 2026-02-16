@@ -69,7 +69,7 @@ const About = () => {
         }}
       />
       <PageHeader
-        badge="About Us"
+
         title="Transforming Businesses Through Intelligent AI"
         subtitle="We are a global AI consulting company dedicated to helping enterprises unlock the full potential of artificial intelligence and digital transformation."
       />

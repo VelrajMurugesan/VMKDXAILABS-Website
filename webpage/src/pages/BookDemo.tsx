@@ -84,7 +84,7 @@ const BookDemo = () => {
         }}
       />
       <PageHeader
-        badge="Book a Demo"
+
         title="Schedule Your Free AI Consultation"
         subtitle="Discover how VMKD X AI LABS can transform your business operations with intelligent automation and AI-powered solutions tailored to your needs."
       />

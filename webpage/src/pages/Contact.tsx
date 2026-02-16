@@ -83,7 +83,7 @@ const Contact = () => {
         }}
       />
       <PageHeader
-        badge="Contact Us"
+
         title="Get in Touch"
         subtitle="Have questions about our AI solutions? We're here to help. Reach out and let's start a conversation about transforming your business."
       />

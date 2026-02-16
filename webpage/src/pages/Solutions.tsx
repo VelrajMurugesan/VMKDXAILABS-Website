@@ -235,7 +235,7 @@ const Solutions = () => {
         ]}
       />
       <PageHeader
-        badge="Solutions"
+
         title="Enterprise AI Solutions"
         subtitle="Comprehensive AI services designed to transform your business operations, accelerate digital transformation, and drive measurable results."
       />

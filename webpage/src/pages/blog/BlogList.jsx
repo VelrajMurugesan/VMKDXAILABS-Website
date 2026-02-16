@@ -118,7 +118,7 @@ export default function BlogList() {
       </Helmet>
 
       <PageHeader
-        badge="Blog"
+
         title="AI Automation & Business Insights"
         subtitle="Expert articles on AI automation, AI agents, ePublishing, and strategies for business transformation."
       />
