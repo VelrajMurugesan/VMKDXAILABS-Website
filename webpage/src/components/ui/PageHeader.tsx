@@ -8,14 +8,14 @@ interface PageHeaderProps {
 
 export const PageHeader = ({ title, subtitle, badge }: PageHeaderProps) => {
   return (
-    <section className="hero-gradient relative overflow-hidden py-8 md:py-10 lg:py-12">
+    <section className="hero-gradient relative overflow-hidden py-12 md:py-16 lg:py-20">
       {/* Background Pattern */}
       <div className="absolute inset-0 grid-pattern" />
       
       {/* Gradient Orbs */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-20 -right-20 w-96 h-96 bg-ai-cyan/15 rounded-full blur-3xl" />
-        <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-ai-purple/10 rounded-full blur-3xl" />
+        <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-ai-cyan/10 rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto container-padding relative z-10">
