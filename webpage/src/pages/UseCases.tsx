@@ -311,7 +311,7 @@ const UseCases = () => {
                   {/* Header */}
                   <div className="lg:w-1/3">
                     <div className="flex items-center gap-4 mb-4">
-                      <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-ai-cyan/20 to-ai-purple/20 flex items-center justify-center">
+                      <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-ai-cyan/30 to-ai-cyan-dark/30 flex items-center justify-center">
                         <useCase.icon className="text-ai-cyan" size={28} />
                       </div>
                       <span className="px-3 py-1 bg-ai-cyan/10 text-ai-cyan text-sm font-medium rounded-full">

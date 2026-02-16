@@ -146,7 +146,7 @@ const WhyHantas = () => {
                 transition={{ delay: index * 0.05 }}
                 className="bg-card p-6 rounded-xl card-shadow border border-border hover:border-ai-cyan/30 transition-all duration-300 group"
               >
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-ai-cyan/20 to-ai-purple/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-ai-cyan/30 to-ai-cyan-dark/30 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                   <item.icon className="text-ai-cyan" size={24} />
                 </div>
                 <h3 className="text-lg font-semibold text-foreground mb-2 font-display">{item.title}</h3>
@@ -246,7 +246,7 @@ const WhyHantas = () => {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <div className="w-14 h-14 mx-auto rounded-xl bg-gradient-to-br from-ai-cyan/20 to-ai-purple/20 flex items-center justify-center mb-4">
+                <div className="w-14 h-14 mx-auto rounded-xl bg-gradient-to-br from-ai-cyan/30 to-ai-cyan-dark/30 flex items-center justify-center mb-4">
                   <stat.icon className="text-ai-cyan" size={28} />
                 </div>
                 <div className="text-3xl font-bold text-foreground font-display">{stat.value}</div>

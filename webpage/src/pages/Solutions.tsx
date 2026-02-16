@@ -253,7 +253,7 @@ const Solutions = () => {
                 className="bg-card rounded-2xl p-8 card-shadow border border-border hover:border-ai-cyan/30 transition-all duration-300 group"
               >
                 <div className="flex items-start gap-6">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-ai-cyan/20 to-ai-purple/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-ai-cyan/30 to-ai-cyan-dark/30 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                     <solution.icon className="text-ai-cyan" size={28} />
                   </div>
                   <div className="flex-1">

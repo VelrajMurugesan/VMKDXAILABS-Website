@@ -123,7 +123,7 @@ const Index = () => {
                 whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
               >
                 <motion.div 
-                  className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-ai-cyan/20 to-ai-purple/20 mb-4"
+                  className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-ai-cyan/30 to-ai-cyan-dark/30 mb-4"
                   whileHover={{ rotate: 360, transition: { duration: 0.6 } }}
                 >
                   <stat.icon className="text-ai-cyan" size={28} />

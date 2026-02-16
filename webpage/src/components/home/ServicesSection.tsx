@@ -130,7 +130,7 @@ export const ServicesSection = () => {
                 }}
               >
                 <motion.div 
-                  className="w-12 h-12 rounded-xl bg-gradient-to-br from-ai-cyan/20 to-ai-purple/20 flex items-center justify-center mb-4 group-hover:from-ai-cyan/30 group-hover:to-ai-purple/30 transition-all"
+                  className="w-12 h-12 rounded-xl bg-gradient-to-br from-ai-cyan/30 to-ai-cyan-dark/30 flex items-center justify-center mb-4 group-hover:from-ai-cyan/40 group-hover:to-ai-cyan-dark/40 transition-all"
                   whileHover={{ rotate: [0, -10, 10, 0], transition: { duration: 0.5 } }}
                 >
                   <service.icon className="text-ai-cyan" size={24} />

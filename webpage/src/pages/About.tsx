@@ -139,7 +139,7 @@ const About = () => {
               viewport={{ once: true }}
               className="bg-card p-8 rounded-2xl card-shadow border border-border hover:border-ai-cyan/30 transition-all"
             >
-              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-ai-cyan/20 to-ai-purple/20 flex items-center justify-center mb-6">
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-ai-cyan/30 to-ai-cyan-dark/30 flex items-center justify-center mb-6">
                 <Eye className="text-ai-cyan" size={28} />
               </div>
               <h3 className="text-2xl font-bold text-foreground mb-4 font-display">Our Vision</h3>
@@ -154,7 +154,7 @@ const About = () => {
               transition={{ delay: 0.1 }}
               className="bg-card p-8 rounded-2xl card-shadow border border-border hover:border-ai-cyan/30 transition-all"
             >
-              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-ai-cyan/20 to-ai-purple/20 flex items-center justify-center mb-6">
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-ai-cyan/30 to-ai-cyan-dark/30 flex items-center justify-center mb-6">
                 <Target className="text-ai-cyan" size={28} />
               </div>
               <h3 className="text-2xl font-bold text-foreground mb-4 font-display">Our Mission</h3>
@@ -207,7 +207,7 @@ const About = () => {
                 transition={{ delay: index * 0.1 }}
                 className="bg-card p-6 rounded-xl card-shadow border border-border text-center hover:border-ai-cyan/30 transition-all group"
               >
-                <div className="w-14 h-14 mx-auto rounded-xl bg-gradient-to-br from-ai-cyan/20 to-ai-purple/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <div className="w-14 h-14 mx-auto rounded-xl bg-gradient-to-br from-ai-cyan/30 to-ai-cyan-dark/30 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                   <value.icon className="text-ai-cyan" size={28} />
                 </div>
                 <h3 className="text-lg font-semibold text-foreground mb-2 font-display">{value.title}</h3>
