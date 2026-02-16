@@ -46,7 +46,7 @@ export const Footer = () => {
                 VMKD X <span className="text-ai-cyan">AI LABS</span>
               </span>
               <span className="block text-xs text-white/50 tracking-wider">
-                BUSINESS SOLUTION
+                Smart Solutions for Your Business Needs
               </span>
             </div>
             <p className="text-white/60 text-sm leading-relaxed mb-6 max-w-sm">

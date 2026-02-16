@@ -65,7 +65,7 @@ export const Header = () => {
                 VMKD X <span className="text-ai-cyan">AI LABS</span>
               </span>
               <span className="block text-[10px] text-white/60 -mt-1 tracking-wider">
-                BUSINESS SOLUTION
+                Smart Solutions for Your Business Needs
               </span>
             </div>
           </Link>
