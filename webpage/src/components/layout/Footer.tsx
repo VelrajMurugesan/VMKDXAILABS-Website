@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, MapPin, Phone, ArrowRight, Linkedin, Twitter } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Mail, MapPin, Phone, Linkedin, Twitter } from "lucide-react";
 import footerBanner from "@/assets/footer-banner.png";
 
 const footerLinks = {
@@ -38,26 +37,6 @@ export const Footer = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/50 to-transparent" />
 
       <div className="container mx-auto container-padding relative z-10">
-        {/* CTA Section */}
-        <div className="py-16 border-b border-white/10">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-            <div className="text-center lg:text-left">
-              <h3 className="text-2xl md:text-3xl font-bold text-white font-display mb-2">
-                Ready to Transform Your Business?
-              </h3>
-              <p className="text-white/60 max-w-xl">
-                Schedule a free consultation with our AI experts today.
-              </p>
-            </div>
-            <Link to="/book-demo">
-              <Button size="lg" className="bg-ai-cyan hover:bg-ai-cyan-dark text-navy font-semibold btn-glow px-8 group">
-                Book Free Consultation
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
-              </Button>
-            </Link>
-          </div>
-        </div>
-
         {/* Main Footer */}
         <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand */}
