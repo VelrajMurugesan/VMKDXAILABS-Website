@@ -12,7 +12,7 @@ services:
       - audio_temp:/app/audio_temp
       - ./google-credentials.json:/app/google-credentials.json:ro
     networks:
-      - traefik_network
+      - n8n_web
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.chatbot.rule=Host(`vmkdxailabs.com`) && PathPrefix(`/api`)"
@@ -25,5 +25,5 @@ volumes:
   audio_temp:
 
 networks:
-  traefik_network:
+  n8n_web:
     external: true
