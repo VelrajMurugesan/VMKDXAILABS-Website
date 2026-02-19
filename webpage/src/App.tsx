@@ -14,6 +14,7 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import BlogList from "./pages/blog/BlogList";
 import BlogPost from "./pages/blog/BlogPost";
+import ChatWidget from "./components/chatbot/ChatWidget";
 
 const queryClient = new QueryClient();
 
@@ -48,6 +49,7 @@ const App = () => (
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <ChatWidget />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

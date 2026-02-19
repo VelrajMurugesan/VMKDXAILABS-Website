@@ -1,4 +1,13 @@
 node_modules/
+.env
 .env.local
 .env*.local
 .claude/
+
+# Credentials & screenshots
+webpage/screenshots/
+
+# Chatbot backend temp files
+webpage/chatbot-backend/audio_temp/
+__pycache__/
+*.pyc

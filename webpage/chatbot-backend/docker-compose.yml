@@ -1,0 +1,28 @@
+version: "3.8"
+services:
+  chatbot:
+    build: .
+    container_name: vmkdxai-chatbot
+    restart: unless-stopped
+    ports:
+      - "8081:8081"
+    env_file:
+      - .env
+    volumes:
+      - audio_temp:/app/audio_temp
+    networks:
+      - traefik_network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.chatbot.rule=Host(`vmkdxailabs.com`) && PathPrefix(`/api`)"
+      - "traefik.http.routers.chatbot.entrypoints=websecure"
+      - "traefik.http.routers.chatbot.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.chatbot.priority=100"
+      - "traefik.http.services.chatbot.loadbalancer.server.port=8081"
+
+volumes:
+  audio_temp:
+
+networks:
+  traefik_network:
+    external: true
