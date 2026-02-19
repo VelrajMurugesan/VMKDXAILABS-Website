@@ -10,6 +10,7 @@ services:
       - .env
     volumes:
       - audio_temp:/app/audio_temp
+      - ./google-credentials.json:/app/google-credentials.json:ro
     networks:
       - traefik_network
     labels:
