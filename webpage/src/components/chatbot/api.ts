@@ -1,10 +1,7 @@
 import type { ChatRequest, ChatResponse, VoiceResponse, Language, LeadData } from "./types";
+import { sendEmail } from "@/lib/emailjs";
 
 const API_BASE = "/api";
-
-const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || "";
-const EMAILJS_CONTACT_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_CONTACT_TEMPLATE_ID || "";
-const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "";
 
 export async function sendChatMessage(request: ChatRequest): Promise<ChatResponse> {
   const res = await fetch(`${API_BASE}/chat`, {
@@ -22,7 +19,9 @@ export async function sendChatMessage(request: ChatRequest): Promise<ChatRespons
 
   // Send lead email via EmailJS if lead data is present
   if (data.lead) {
-    sendLeadEmail(data.lead, "text").catch(() => {});
+    sendLeadEmail(data.lead, "text").catch((err) =>
+      console.error("Lead email failed:", err)
+    );
   }
 
   return data;
@@ -52,43 +51,25 @@ export async function sendVoiceMessage(
 
   // Send lead email via EmailJS if lead data is present
   if (data.lead) {
-    sendLeadEmail(data.lead, "voice").catch(() => {});
+    sendLeadEmail(data.lead, "voice").catch((err) =>
+      console.error("Lead email failed:", err)
+    );
   }
 
   return data;
 }
 
 async function sendLeadEmail(lead: LeadData, source: string): Promise<void> {
-  if (!EMAILJS_SERVICE_ID || !EMAILJS_PUBLIC_KEY || !EMAILJS_CONTACT_TEMPLATE_ID) {
-    console.warn("EmailJS not configured, lead email not sent:", lead);
-    return;
-  }
+  const templateId = import.meta.env.VITE_EMAILJS_CONTACT_TEMPLATE_ID;
 
-  try {
-    const res = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        service_id: EMAILJS_SERVICE_ID,
-        template_id: EMAILJS_CONTACT_TEMPLATE_ID,
-        user_id: EMAILJS_PUBLIC_KEY,
-        template_params: {
-          name: lead.name,
-          email: lead.email,
-          company: "",
-          phone: lead.mobile,
-          subject: `AI Chatbot Lead (${source.toUpperCase()})`,
-          requirement: lead.requirement,
-        },
-      }),
-    });
+  await sendEmail(templateId, {
+    name: lead.name,
+    email: lead.email,
+    company: "",
+    phone: lead.mobile,
+    subject: `AI Chatbot Lead (${source.toUpperCase()})`,
+    requirement: lead.requirement,
+  });
 
-    if (res.ok) {
-      console.log("Lead email sent successfully via EmailJS");
-    } else {
-      console.error("EmailJS error:", res.status, await res.text());
-    }
-  } catch (err) {
-    console.error("Failed to send lead email:", err);
-  }
+  console.log("Lead email sent successfully via EmailJS");
 }
