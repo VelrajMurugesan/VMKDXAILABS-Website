@@ -151,7 +151,7 @@ At [VMKD X AI LABS](/about), we've built our practice around the principles outl
 - **Industry experience** — [Projects across banking, healthcare, ePublishing, manufacturing, and more](/use-cases)
 - **Proven methodology** — Structured discovery, agile delivery, comprehensive documentation, and knowledge transfer
 - **Enterprise security** — Compliance-first approach with enterprise-grade security in every solution
-- **Long-term partnership** — 98% client satisfaction with dedicated post-launch support and SLA-backed guarantees
+- **Long-term partnership** — 100% client satisfaction with dedicated post-launch support and SLA-backed guarantees
 - **Transparent communication** — Fixed-price projects with regular progress updates and no hidden costs
 
 We don't just implement technology — we partner with you to understand your business and deliver solutions that create measurable impact. [Learn more about our approach](/why-vmkd).

@@ -3,294 +3,159 @@ import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { CTASection } from "@/components/home/CTASection";
 import { motion } from "framer-motion";
+import { Play, ExternalLink } from "lucide-react";
 import {
-  Bot, 
-  BarChart3, 
-  Code, 
-  Cog, 
-  MessageSquare, 
-  Brain, 
-  Database, 
-  Workflow,
-  Mic,
-  Cloud,
-  GraduationCap,
-  Rocket,
-  CheckCircle
-} from "lucide-react";
+  StaggerContainer,
+  staggerItemVariants,
+} from "@/components/animations/ParallaxSection";
 
-const solutions = [
-  {
-    icon: Bot,
-    title: "AI Business Automation",
-    description: "Automate complex business processes across HR, Finance, and Operations with intelligent AI systems that learn, adapt, and continuously improve.",
-    features: [
-      "Document Processing & OCR",
-      "Invoice & Receipt Automation",
-      "Approval Workflow Automation",
-      "Compliance & Audit Automation",
-    ],
-    outcomes: ["40% cost reduction", "90% faster processing", "99.5% accuracy"],
-  },
-  {
-    icon: MessageSquare,
-    title: "AI Chatbot Development",
-    description: "Build intelligent conversational AI chatbots for customer support, sales, HR, and internal operations with natural language understanding.",
-    features: [
-      "Multi-language Support",
-      "Intent Recognition & NLU",
-      "CRM/ERP Integration",
-      "Omnichannel Deployment",
-    ],
-    outcomes: ["24/7 availability", "80% query resolution", "50% cost savings"],
-  },
-  {
-    icon: Workflow,
-    title: "Business Process Automation",
-    description: "Streamline repetitive tasks and optimize end-to-end business processes with intelligent automation and robotic process automation.",
-    features: [
-      "Process Discovery & Mapping",
-      "RPA Implementation",
-      "Intelligent Document Processing",
-      "Workflow Orchestration",
-    ],
-    outcomes: ["70% time savings", "Zero manual errors", "Faster turnaround"],
-  },
-  {
-    icon: BarChart3,
-    title: "Data Analytics & AI Insights",
-    description: "Transform raw data into actionable insights with advanced analytics, predictive modeling, and real-time business intelligence dashboards.",
-    features: [
-      "Predictive Analytics",
-      "Real-time Dashboards",
-      "Customer Behavior Analysis",
-      "Revenue Forecasting",
-    ],
-    outcomes: ["10x faster insights", "Data-driven decisions", "Improved ROI"],
-  },
-  {
-    icon: Code,
-    title: "Custom AI Development",
-    description: "Tailored AI solutions built specifically for your unique business requirements, from NLP to computer vision and beyond.",
-    features: [
-      "Natural Language Processing",
-      "Computer Vision Solutions",
-      "Recommendation Engines",
-      "AI-powered Search",
-    ],
-    outcomes: ["Custom fit solutions", "Competitive advantage", "Innovation edge"],
-  },
-  {
-    icon: Brain,
-    title: "AI Consulting & Strategy",
-    description: "Expert guidance on AI adoption, technology selection, implementation roadmaps, and organizational change management.",
-    features: [
-      "AI Readiness Assessment",
-      "Technology Stack Selection",
-      "ROI Analysis & Planning",
-      "Change Management",
-    ],
-    outcomes: ["Clear roadmap", "Risk mitigation", "Faster adoption"],
-  },
-  {
-    icon: Database,
-    title: "LLM Integration & RAG Systems",
-    description: "Integrate large language models with your enterprise data using retrieval-augmented generation for accurate, context-aware AI responses.",
-    features: [
-      "Enterprise LLM Deployment",
-      "Knowledge Base Integration",
-      "Document Q&A Systems",
-      "Semantic Search",
-    ],
-    outcomes: ["Accurate responses", "Reduced hallucination", "Enterprise context"],
-  },
-  {
-    icon: Mic,
-    title: "Voice AI & Workflow Automation",
-    description: "Voice-enabled AI assistants and automated workflow orchestration for hands-free productivity and enhanced user experience.",
-    features: [
-      "Voice Command Systems",
-      "Speech-to-Text/Text-to-Speech",
-      "Voice Biometrics",
-      "Call Center Automation",
-    ],
-    outcomes: ["Hands-free operations", "Improved accessibility", "Faster service"],
-  },
-  {
-    icon: Cog,
-    title: "Digital Transformation",
-    description: "End-to-end digital transformation using AI, cloud, and modern technologies to future-proof your business operations.",
-    features: [
-      "Legacy System Modernization",
-      "Cloud Migration",
-      "API-first Architecture",
-      "Microservices Design",
-    ],
-    outcomes: ["Future-ready systems", "Increased agility", "Lower TCO"],
-  },
-  {
-    icon: GraduationCap,
-    title: "AI Training for Teams",
-    description: "Comprehensive AI training programs to upskill your workforce and build internal AI capabilities for sustainable innovation.",
-    features: [
-      "Customized Training Programs",
-      "Hands-on Workshops",
-      "AI Tool Proficiency",
-      "Best Practices & Ethics",
-    ],
-    outcomes: ["Skilled workforce", "Internal AI expertise", "Culture of innovation"],
-  },
-  {
-    icon: Rocket,
-    title: "SaaS & MVP Development",
-    description: "Build scalable SaaS products and MVPs with AI-powered features, from concept validation to market launch.",
-    features: [
-      "Product Strategy & Design",
-      "Rapid Prototyping",
-      "AI Feature Integration",
-      "Scalable Architecture",
-    ],
-    outcomes: ["Faster time-to-market", "Validated concepts", "Investor-ready"],
-  },
-  {
-    icon: Cloud,
-    title: "Cloud AI Deployment",
-    description: "Deploy and scale AI solutions on cloud infrastructure with enterprise-grade security, performance, and reliability.",
-    features: [
-      "AWS/Azure/GCP Deployment",
-      "MLOps & CI/CD Pipelines",
-      "Auto-scaling Infrastructure",
-      "Security & Compliance",
-    ],
-    outcomes: ["99.9% uptime", "Infinite scalability", "Enterprise security"],
-  },
+interface Project {
+  title: string;
+  description: string;
+  tags: string[];
+  media: {
+    type: "video" | "image";
+    src: string;
+    poster?: string; // thumbnail for videos
+  };
+  liveUrl?: string;
+}
+
+const projects: Project[] = [
+  // Add your projects here. Examples:
+  // {
+  //   title: "AI Chatbot for E-commerce",
+  //   description: "Multilingual support bot handling 500+ queries/day with 90% resolution rate.",
+  //   tags: ["LangChain", "FastAPI", "React"],
+  //   media: { type: "video", src: "/projects/chatbot-demo.mp4", poster: "/projects/chatbot-thumb.jpg" },
+  //   liveUrl: "https://example.com",
+  // },
+  // {
+  //   title: "Invoice Automation Pipeline",
+  //   description: "End-to-end invoice processing with OCR and approval workflows.",
+  //   tags: ["Python", "n8n", "OpenAI"],
+  //   media: { type: "image", src: "/projects/invoice-demo.png" },
+  // },
 ];
+
+const ProjectCard = ({ project }: { project: Project }) => (
+  <motion.div variants={staggerItemVariants}>
+    <motion.div
+      className="group bg-card rounded-2xl overflow-hidden border border-border hover:border-ai-cyan/30 transition-all duration-300 h-full flex flex-col"
+      whileHover={{ y: -6, transition: { duration: 0.3, ease: "easeOut" } }}
+    >
+      {/* Media */}
+      <div className="relative aspect-video bg-navy/50 overflow-hidden">
+        {project.media.type === "video" ? (
+          <>
+            <video
+              src={project.media.src}
+              poster={project.media.poster}
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              onMouseEnter={(e) => e.currentTarget.play()}
+              onMouseLeave={(e) => {
+                e.currentTarget.pause();
+                e.currentTarget.currentTime = 0;
+              }}
+            />
+            <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/10 transition-colors">
+              <div className="w-12 h-12 rounded-full bg-ai-cyan/90 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <Play className="text-navy ml-0.5" size={20} fill="currentColor" />
+              </div>
+            </div>
+          </>
+        ) : (
+          <img
+            src={project.media.src}
+            alt={project.title}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            loading="lazy"
+          />
+        )}
+      </div>
+
+      {/* Info */}
+      <div className="p-6 flex flex-col flex-1">
+        <div className="flex items-start justify-between gap-3 mb-3">
+          <h3 className="text-xl font-semibold text-foreground group-hover:text-ai-cyan transition-colors font-display">
+            {project.title}
+          </h3>
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-ai-cyan hover:text-ai-cyan-dark transition-colors flex-shrink-0 mt-1"
+            >
+              <ExternalLink size={18} />
+            </a>
+          )}
+        </div>
+
+        <p className="text-muted-foreground leading-relaxed mb-5 flex-1">
+          {project.description}
+        </p>
+
+        <div className="flex flex-wrap gap-2 pt-4 border-t border-border/50">
+          {project.tags.map((tag) => (
+            <span
+              key={tag}
+              className="px-2.5 py-1 text-xs font-medium rounded-full bg-ai-cyan/8 text-ai-cyan/80 border border-ai-cyan/15"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+    </motion.div>
+  </motion.div>
+);
 
 const Solutions = () => {
   return (
     <Layout>
       <SEOHead
-        title="AI Solutions | AI Automation, Chatbots, LLM, Data Analytics — VMKD X AI LABS"
-        description="Explore VMKD X AI LABS AI solutions: business automation, AI chatbots, LLM & RAG, data analytics, ePublishing, eBooks automation, custom development with Java, Python, AutoGen & N8N."
+        title="Our Work | AI Projects & Solutions — VMKD X AI LABS"
+        description="See our AI projects in action — chatbots, automation pipelines, voice agents, and custom AI solutions built for real businesses."
         canonical="https://vmkdxailabs.com/solutions"
-        keywords="AI chatbot development, LLM integration, RAG systems, AI business automation, custom AI development"
-        jsonLd={[
-          {
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://vmkdxailabs.com/" },
-              { "@type": "ListItem", "position": 2, "name": "Solutions", "item": "https://vmkdxailabs.com/solutions" }
-            ]
-          },
-          {
-            "@context": "https://schema.org",
-            "@type": "ItemList",
-            "name": "AI Solutions by VMKD X AI LABS",
-            "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "AI Business Automation" },
-              { "@type": "ListItem", "position": 2, "name": "AI Chatbot Development" },
-              { "@type": "ListItem", "position": 3, "name": "Business Process Automation" },
-              { "@type": "ListItem", "position": 4, "name": "Data Analytics & AI Insights" },
-              { "@type": "ListItem", "position": 5, "name": "Custom AI Development" },
-              { "@type": "ListItem", "position": 6, "name": "AI Consulting & Strategy" },
-              { "@type": "ListItem", "position": 7, "name": "LLM Integration & RAG Systems" },
-              { "@type": "ListItem", "position": 8, "name": "Voice AI & Workflow Automation" },
-              { "@type": "ListItem", "position": 9, "name": "Digital Transformation" },
-              { "@type": "ListItem", "position": 10, "name": "AI Training for Teams" },
-              { "@type": "ListItem", "position": 11, "name": "SaaS & MVP Development" },
-              { "@type": "ListItem", "position": 12, "name": "Cloud AI Deployment" }
-            ]
-          },
-          {
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "What AI solutions does VMKD X AI LABS offer?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "VMKD X AI LABS offers 12+ AI solutions including business automation, AI chatbot development, LLM & RAG systems, data analytics, custom AI development, voice AI, digital transformation, SaaS/MVP development, and cloud AI deployment."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "How can AI automation reduce business costs?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "AI automation can reduce operational costs by up to 40% by automating repetitive tasks like document processing, invoice handling, approval workflows, and compliance audits with 99.5% accuracy."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Does VMKD X AI LABS build custom AI chatbots?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Yes, we develop intelligent AI chatbots with multi-language support, intent recognition, CRM/ERP integration, and omnichannel deployment for customer support, sales, and internal operations."
-                }
-              }
-            ]
-          }
-        ]}
+        keywords="AI projects, AI portfolio, AI automation demos, chatbot development, voice AI agents"
       />
       <PageHeader
-
-        title="Enterprise AI Solutions"
-        subtitle="Comprehensive AI services designed to transform your business operations, accelerate digital transformation, and drive measurable results."
+        title="Our Work"
+        subtitle="Real projects. Real results. See what we've built for businesses like yours."
       />
 
-      <section className="py-8 md:py-12 bg-background">
+      <section className="py-8 md:py-16 bg-background">
         <div className="container mx-auto container-padding">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {solutions.map((solution, index) => (
-              <motion.div
-                key={solution.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                className="bg-card rounded-2xl p-8 card-shadow border border-border hover:border-ai-cyan/30 transition-all duration-300 group"
-              >
-                <div className="flex items-start gap-6">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-ai-cyan/30 to-ai-cyan-dark/30 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                    <solution.icon className="text-ai-cyan" size={28} />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-foreground mb-3 font-display group-hover:text-ai-cyan transition-colors">
-                      {solution.title}
-                    </h3>
-                    <p className="text-muted-foreground mb-6 leading-relaxed">
-                      {solution.description}
-                    </p>
-                    
-                    <div className="mb-6">
-                      <h4 className="text-sm font-semibold text-foreground mb-3">Key Features:</h4>
-                      <ul className="grid grid-cols-2 gap-2">
-                        {solution.features.map((feature) => (
-                          <li key={feature} className="flex items-center gap-2 text-sm text-muted-foreground">
-                            <CheckCircle size={14} className="text-ai-cyan flex-shrink-0" />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div className="flex flex-wrap gap-2">
-                      {solution.outcomes.map((outcome) => (
-                        <span
-                          key={outcome}
-                          className="px-3 py-1 bg-ai-cyan/10 text-ai-cyan text-xs font-medium rounded-full"
-                        >
-                          {outcome}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+          {projects.length > 0 ? (
+            <StaggerContainer
+              className="grid grid-cols-1 md:grid-cols-2 gap-8"
+              staggerDelay={0.1}
+            >
+              {projects.map((project) => (
+                <ProjectCard key={project.title} project={project} />
+              ))}
+            </StaggerContainer>
+          ) : (
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-center py-20"
+            >
+              <div className="w-20 h-20 rounded-2xl bg-ai-cyan/10 flex items-center justify-center mx-auto mb-6">
+                <Play className="text-ai-cyan" size={32} />
+              </div>
+              <h3 className="text-2xl font-semibold text-foreground mb-3 font-display">
+                Project showcases coming soon
+              </h3>
+              <p className="text-muted-foreground max-w-md mx-auto">
+                We're preparing video demos and case studies of our latest AI projects. Check back soon.
+              </p>
+            </motion.div>
+          )}
         </div>
       </section>
 

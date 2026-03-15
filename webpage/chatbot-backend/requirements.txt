@@ -8,3 +8,7 @@ pydantic-settings==2.7.1
 python-dotenv==1.0.1
 aiofiles==24.1.0
 httpx==0.28.1
+twilio==9.4.0
+pydub==0.25.1
+websockets==13.1
+audioop-lts==0.2.1; python_version >= "3.13"

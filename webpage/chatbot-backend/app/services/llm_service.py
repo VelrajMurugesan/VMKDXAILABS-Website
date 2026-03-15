@@ -2,7 +2,7 @@ import logging
 from openai import AsyncOpenAI
 
 from app.core.config import get_settings
-from app.core.prompts import SYSTEM_PROMPT
+from app.core.prompts import SYSTEM_PROMPT, PHONE_SYSTEM_PROMPT
 
 logger = logging.getLogger(__name__)
 
@@ -41,6 +41,66 @@ def build_messages(
     messages.append({"role": "user", "content": user_message})
 
     return messages
+
+
+async def get_phone_response(
+    user_message: str,
+    history: list[dict] | None = None,
+    language_hint: str = "auto",
+) -> str:
+    """Get a chat response optimized for phone calls.
+
+    Uses the phone system prompt (shorter, no markdown) and keeps
+    more conversation history since phone calls are multi-turn.
+    """
+    if history is None:
+        history = []
+
+    system_prompt = PHONE_SYSTEM_PROMPT
+    if language_hint and language_hint != "auto":
+        language_map = {
+            "ta": (
+                "LANGUAGE: The caller is speaking Tamil. "
+                "Respond ENTIRELY in Tamil script. Do not use Hindi or English."
+            ),
+            "hi": (
+                "LANGUAGE: The caller is speaking Hindi. "
+                "Respond ENTIRELY in Hindi. Do not use Tamil or English."
+            ),
+            "en": (
+                "LANGUAGE: The caller is speaking English. "
+                "Respond ENTIRELY in English."
+            ),
+        }
+        hint = language_map.get(language_hint, "")
+        if hint:
+            system_prompt = f"{system_prompt}\n\n{hint}"
+
+    # Keep more history for phone calls (up to 20 turns)
+    messages = [{"role": "system", "content": system_prompt}]
+    recent_history = history[-20:] if len(history) > 20 else history
+    for entry in recent_history:
+        role = entry.get("role", "user")
+        content = entry.get("content", "")
+        if role in ("user", "assistant") and content:
+            messages.append({"role": role, "content": content})
+    messages.append({"role": "user", "content": user_message})
+
+    try:
+        response = await client.chat.completions.create(
+            model=settings.openai_model,
+            messages=messages,
+            temperature=0.3,
+            max_tokens=300,
+        )
+        reply = response.choices[0].message.content
+        if not reply:
+            logger.warning("OpenAI returned empty response for phone call.")
+            return "I'm sorry, could you please repeat that?"
+        return reply.strip()
+    except Exception as e:
+        logger.error(f"OpenAI API error (phone): {e}", exc_info=True)
+        raise
 
 
 async def get_chat_response(

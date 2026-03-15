@@ -6,7 +6,6 @@ const footerLinks = {
   company: [
     { name: "About Us", path: "/about" },
     { name: "Why VMKD X AI LABS", path: "/why-vmkd" },
-    { name: "Use Cases", path: "/use-cases" },
     { name: "Contact", path: "/contact" },
   ],
   solutions: [
@@ -16,13 +15,6 @@ const footerLinks = {
     { name: "Custom AI Development", path: "/solutions" },
     { name: "LLM & RAG Systems", path: "/solutions" },
     { name: "Voice AI & Workflow", path: "/solutions" },
-  ],
-  resources: [
-    { name: "AI Blog", path: "/blog" },
-    { name: "AI for Small Business", path: "/blog/ai-automation-for-small-business" },
-    { name: "AI for ePublishing", path: "/blog/ai-automation-for-epublishing" },
-    { name: "AI Agents Guide", path: "/blog/ai-agents-for-business-automation" },
-    { name: "Choose AI Partner", path: "/blog/how-to-choose-ai-development-partner" },
   ],
 };
 
@@ -38,7 +30,7 @@ export const Footer = () => {
 
       <div className="container mx-auto container-padding relative z-10">
         {/* Main Footer */}
-        <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+        <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="mb-6">
@@ -108,22 +100,6 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Resources Links */}
-          <div>
-            <h4 className="font-semibold text-white mb-6 font-display">Resources</h4>
-            <ul className="space-y-3">
-              {footerLinks.resources.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.path}
-                    className="text-sm text-white/60 hover:text-ai-cyan transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
 
         {/* Bottom Bar - 3 Columns */}

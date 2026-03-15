@@ -15,6 +15,13 @@ class Settings(BaseSettings):
     emailjs_public_key: str = ""
     emailjs_lead_template_id: str = ""
 
+    # Twilio
+    twilio_account_sid: str = ""
+    twilio_auth_token: str = ""
+    twilio_phone_number: str = ""
+    twilio_api_key: str = ""
+    base_url: str = ""
+
     # App
     audio_temp_dir: str = "/app/audio_temp"
     cors_origins: list[str] = [

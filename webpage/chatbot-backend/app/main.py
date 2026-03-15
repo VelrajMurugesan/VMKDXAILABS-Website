@@ -10,6 +10,7 @@ from fastapi.responses import JSONResponse
 
 from app.core.config import get_settings
 from app.routers import chat, voice
+from app.routers import twilio_voice
 from app.services.tts_service import AUDIO_TEMP_DIR
 
 # Configure logging
@@ -194,6 +195,7 @@ async def rate_limit_middleware(request: Request, call_next):
 # ─────────────────────────────────────────────
 app.include_router(chat.router, tags=["Chat"])
 app.include_router(voice.router, tags=["Voice"])
+app.include_router(twilio_voice.router, tags=["Twilio Voice"])
 
 
 # ─────────────────────────────────────────────
@@ -211,5 +213,6 @@ async def health_check():
         "checks": {
             "openai_configured": bool(settings.openai_api_key),
             "google_cloud_configured": bool(settings.google_application_credentials),
+            "twilio_configured": bool(settings.twilio_account_sid and settings.twilio_auth_token),
         },
     }

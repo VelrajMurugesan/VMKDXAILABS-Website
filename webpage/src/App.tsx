@@ -8,12 +8,9 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Solutions from "./pages/Solutions";
 import WhyVMKD from "./pages/WhyHantas";
-import UseCases from "./pages/UseCases";
 import BookDemo from "./pages/BookDemo";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
-import BlogList from "./pages/blog/BlogList";
-import BlogPost from "./pages/blog/BlogPost";
 import ChatWidget from "./components/chatbot/ChatWidget";
 
 const queryClient = new QueryClient();
@@ -42,11 +39,8 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/solutions" element={<Solutions />} />
           <Route path="/why-vmkd" element={<WhyVMKD />} />
-          <Route path="/use-cases" element={<UseCases />} />
           <Route path="/book-demo" element={<BookDemo />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/blog" element={<BlogList />} />
-          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <ChatWidget />

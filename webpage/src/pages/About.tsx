@@ -91,7 +91,7 @@ const About = () => {
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  VMKD X AI LABS Business Solution is a leading AI consulting and technology company headquartered in Trichy, Tamil Nadu, India. We specialize in helping enterprises worldwide automate processes, gain actionable insights, and scale operations through intelligent AI solutions.
+                  VMKD X AI LABS Business Solution is a leading AI consulting and technology company headquartered in Dindigul, Tamil Nadu, India. We specialize in helping enterprises worldwide automate processes, gain actionable insights, and scale operations through intelligent AI solutions.
                 </p>
                 <p>
                   Founded with a vision to democratize AI for businesses of all sizes, we bring together deep technical expertise with practical business understanding to deliver solutions that create real, measurable impact.
@@ -112,7 +112,7 @@ const About = () => {
                   { value: "2+", label: "Enterprise Clients" },
                   { value: "5+", label: "Projects Delivered" },
                   { value: "1+", label: "Countries Served" },
-                  { value: "98%", label: "Client Satisfaction" },
+                  { value: "100%", label: "Client Satisfaction" },
                 ].map((stat) => (
                   <motion.div
                     key={stat.label}

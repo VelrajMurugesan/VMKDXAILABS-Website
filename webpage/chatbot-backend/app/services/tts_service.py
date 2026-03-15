@@ -151,3 +151,47 @@ async def synthesize_speech(text: str, language: str = "en") -> str:
     except Exception as e:
         logger.error(f"Google TTS error: {e}", exc_info=True)
         raise
+
+
+async def synthesize_speech_bytes(text: str, language: str = "en") -> bytes:
+    """Synthesize speech and return raw MP3 bytes (no file written).
+
+    Used by the Twilio voice pipeline where we need bytes for
+    mulaw conversion rather than a file on disk.
+
+    Args:
+        text: The text to convert to speech.
+        language: Language code ("ta", "en", "hi").
+
+    Returns:
+        Raw MP3 audio bytes.
+    """
+    voice_config = VOICE_MAP.get(language, VOICE_MAP["en"])
+
+    client = texttospeech.TextToSpeechClient()
+
+    clean_text = clean_text_for_speech(text)
+    logger.info("TTS bytes input cleaned: %d -> %d chars", len(text), len(clean_text))
+
+    synthesis_input = texttospeech.SynthesisInput(text=clean_text)
+    voice = texttospeech.VoiceSelectionParams(
+        language_code=voice_config["language_code"],
+        name=voice_config["name"],
+    )
+    audio_config = texttospeech.AudioConfig(
+        audio_encoding=texttospeech.AudioEncoding.MP3,
+        speaking_rate=1.0,
+        pitch=0.0,
+    )
+
+    response = client.synthesize_speech(
+        input=synthesis_input,
+        voice=voice,
+        audio_config=audio_config,
+    )
+
+    logger.info(
+        "TTS bytes synthesis: %s, %s, %d bytes",
+        language, voice_config["name"], len(response.audio_content),
+    )
+    return response.audio_content

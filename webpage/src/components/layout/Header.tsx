@@ -10,9 +10,7 @@ const navItems = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
   { name: "Solutions", path: "/solutions" },
-  { name: "Use Cases", path: "/use-cases" },
   { name: "Why Us", path: "/why-vmkd" },
-  { name: "Blog", path: "/blog" },
   { name: "Contact", path: "/contact" },
 ];
 
